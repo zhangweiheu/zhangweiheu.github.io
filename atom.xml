@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>流云</title>
+  <subtitle>不忘初心，方得始终</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="zhangweiheu.github.io/"/>
+  <updated>2016-05-08T06:49:43.704Z</updated>
+  <id>zhangweiheu.github.io/</id>
+  
+  <author>
+    <name>zhangwei</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker修改系统时区</title>
+    <link href="zhangweiheu.github.io/2016/05/08/Docker%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%8C%BA/"/>
+    <id>zhangweiheu.github.io/2016/05/08/Docker修改系统时区/</id>
+    <published>2016-05-08T06:13:51.000Z</published>
+    <updated>2016-05-08T06:49:43.704Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Ubantu修改系统时区&quot;&gt;&lt;a href=&quot;#Ubantu修改系统时区&quot; class=&quot;headerlink&quot; title=&quot;Ubantu修改系统时区&quot;&gt;&lt;/a&gt;Ubantu修改系统时区&lt;/h3&gt;&lt;p&gt;直接修改/etc/timezone&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;echo &amp;quot;Asia/shanghai&amp;quot; &amp;gt; /etc/timezone&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;``` &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;### Centos修改系统时区  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```shell&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      Linux修改系统时区
+    
+    </summary>
+    
+      <category term="Docker" scheme="zhangweiheu.github.io/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="zhangweiheu.github.io/tags/Docker/"/>
+    
+      <category term="TimeZone" scheme="zhangweiheu.github.io/tags/TimeZone/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB备份与恢复命令</title>
+    <link href="zhangweiheu.github.io/2016/05/05/MongoDB%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4/"/>
+    <id>zhangweiheu.github.io/2016/05/05/MongoDB备份与恢复命令/</id>
+    <published>2016-05-05T12:19:45.000Z</published>
+    <updated>2016-05-05T13:42:18.542Z</updated>
+    
+    <content type="html">&lt;p&gt;先到mongodb/bin/目录下&lt;/p&gt;
+&lt;h3 id=&quot;备份&quot;&gt;&lt;a href=&quot;#备份&quot; class=&quot;headerlink&quot; title=&quot;备份&quot;&gt;&lt;/a&gt;备份&lt;/h3&gt;&lt;p&gt;./mongodump –db xxx(数据库名称)  –out /xxx/(备份路径)&lt;br&gt;默认路径在当前路径下：dump/xxx   &lt;/p&gt;
+&lt;h3 id=&quot;恢复&quot;&gt;&lt;a href=&quot;#恢复&quot; class=&quot;headerlink&quot; title=&quot;恢复&quot;&gt;&lt;/a&gt;恢复&lt;/h3&gt;&lt;p&gt;./mongorestore –db xxx(数据库名称) ./xxx(数据库备份路径)&lt;/p&gt;
+&lt;h3 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h3&gt;&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      MongoDB备份与恢复命令
+    
+    </summary>
+    
+      <category term="MongoDB" scheme="zhangweiheu.github.io/categories/MongoDB/"/>
+    
+    
+      <category term="MongoDB" scheme="zhangweiheu.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tar命令</title>
+    <link href="zhangweiheu.github.io/2016/05/05/tar%E5%91%BD%E4%BB%A4/"/>
+    <id>zhangweiheu.github.io/2016/05/05/tar命令/</id>
+    <published>2016-05-05T12:13:16.000Z</published>
+    <updated>2016-05-05T12:35:23.329Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;解压命令&quot;&gt;&lt;a href=&quot;#解压命令&quot; class=&quot;headerlink&quot; title=&quot;解压命令&quot;&gt;&lt;/a&gt;解压命令&lt;/h3&gt;&lt;p&gt; tar -zxvf ./xxx.tar.gz&lt;/p&gt;
+&lt;h3 id=&quot;压缩命令&quot;&gt;&lt;a href=&quot;#压缩命令&quot; class=&quot;headerlink&quot; title=&quot;压缩命令&quot;&gt;&lt;/a&gt;压缩命令&lt;/h3&gt;&lt;p&gt; tar -czvf ./xxx.tar.gz xxx&lt;/p&gt;
+&lt;h3 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h3&gt;&lt;p&gt; Cannot open: Permission denied;&lt;br&gt;  没有权限&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      tar命令
+    
+    </summary>
+    
+      <category term="Linux" scheme="zhangweiheu.github.io/categories/Linux/"/>
+    
+    
+      <category term="tar" scheme="zhangweiheu.github.io/tags/tar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vim</title>
+    <link href="zhangweiheu.github.io/2016/04/29/Vim/"/>
+    <id>zhangweiheu.github.io/2016/04/29/Vim/</id>
+    <published>2016-04-29T10:21:30.000Z</published>
+    <updated>2016-05-04T03:20:06.284Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;Ubantu安装软件异常&quot;&gt;&lt;a href=&quot;#Ubantu安装软件异常&quot; class=&quot;headerlink&quot; title=&quot;Ubantu安装软件异常&quot;&gt;&lt;/a&gt;Ubantu安装软件异常&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Unable to locate package vim&lt;/li&gt;
+&lt;li&gt;Package ‘vim-nox’ has no installation candidate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;解决方法：apt-get update  &lt;/p&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      Ubantu安装软件异常
+    
+    </summary>
+    
+      <category term="Linux" scheme="zhangweiheu.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="zhangweiheu.github.io/tags/Linux/"/>
+    
+      <category term="Vim" scheme="zhangweiheu.github.io/tags/Vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jenkins插件</title>
+    <link href="zhangweiheu.github.io/2016/04/28/Jenkins%E6%8F%92%E4%BB%B6/"/>
+    <id>zhangweiheu.github.io/2016/04/28/Jenkins插件/</id>
+    <published>2016-04-28T14:32:53.000Z</published>
+    <updated>2016-05-04T03:19:15.285Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;安装jenkins后“可选插件”列表为空&quot;&gt;&lt;a href=&quot;#安装jenkins后“可选插件”列表为空&quot; class=&quot;headerlink&quot; title=&quot;安装jenkins后“可选插件”列表为空&quot;&gt;&lt;/a&gt;安装jenkins后“可选插件”列表为空&lt;/h3&gt;&lt;p&gt;因为插件站点被qiang,解决方法：更换插件源&lt;br&gt;选择插件管理-&amp;gt;高级-&amp;gt;升级站点-&amp;gt;更改url为：&lt;a href=&quot;http://mirror.xmission.com/jenkins/updates/update-center.json&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mirror.xmission.com/jenkins/updates/update-center.json&lt;/a&gt; 点击提交&lt;br&gt;完事&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      jenkins后“可选插件”列表为空
+    
+    </summary>
+    
+      <category term="Jenkins" scheme="zhangweiheu.github.io/categories/Jenkins/"/>
+    
+    
+      <category term="Docker" scheme="zhangweiheu.github.io/tags/Docker/"/>
+    
+      <category term="Jenkins" scheme="zhangweiheu.github.io/tags/Jenkins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker</title>
+    <link href="zhangweiheu.github.io/2016/04/27/Docker/"/>
+    <id>zhangweiheu.github.io/2016/04/27/Docker/</id>
+    <published>2016-04-27T05:05:50.000Z</published>
+    <updated>2016-05-04T03:18:28.741Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Docker学习&quot;&gt;&lt;a href=&quot;#Docker学习&quot; class=&quot;headerlink&quot; title=&quot;Docker学习&quot;&gt;&lt;/a&gt;Docker学习&lt;/h2&gt;&lt;h3 id=&quot;docker安装-系统必须64位&quot;&gt;&lt;a href=&quot;#docker安装-系统必须64位&quot; class=&quot;headerlink&quot; title=&quot;docker安装(系统必须64位)&quot;&gt;&lt;/a&gt;docker安装(系统必须64位)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;centos7:yun install docker,由于docker国内官方没有站点，比较慢，所以建议使用镜像站，安装docker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;dockerfile构建新的镜像&quot;&gt;&lt;a href=&quot;#dockerfile构建新的镜像&quot; class=&quot;headerlink&quot; title=&quot;dockerfile构建新的镜像&quot;&gt;&lt;/a&gt;dockerfile构建新的镜像&lt;/h3&gt;&lt;h5 id=&quot;基本指令&quot;&gt;&lt;a href=&quot;#基本指令&quot; class=&quot;headerlink&quot; title=&quot;基本指令&quot;&gt;&lt;/a&gt;基本指令&lt;/h5&gt;&lt;p&gt;  RUN：镜像构建时要运行的命令，不同于使用docker run启动容器；&lt;br&gt;  CMD：容器启动时要运行的命令，docker run中的命令会覆盖CMD中的命令；eg:CMD[“bash”,”-1”]&lt;br&gt;  ENTRYPOINT：类似于CMD指令，但是该指令不容易在容器启动时被覆盖，而docker run中的参数会被再次传递给ENTRYPOINT；eg：ENTRYPOINT[“nginx”,”-g”,”daemon off”]&lt;br&gt;  WORKDIR：&lt;br&gt;  ENV：&lt;br&gt;  USER：指定该镜像以什么身份去运行；eg:USER zhangwei:administor&lt;br&gt;  VOLUME：用来向基于镜像的容器添加卷&lt;br&gt;  ADD：复制并解压文件&lt;br&gt;  COPY：只是复制文件&lt;br&gt;  ONBUILD：为镜像添加触发器，&lt;br&gt;  docker 命令 ：docker exec -it containerID/NAME /bin/bash  &lt;/p&gt;
+&lt;h3 id=&quot;Docker基本命令&quot;&gt;&lt;a href=&quot;#Docker基本命令&quot; class=&quot;headerlink&quot; title=&quot;Docker基本命令&quot;&gt;&lt;/a&gt;Docker基本命令&lt;/h3&gt;&lt;p&gt;$ sudo docker   # docker命令帮助&lt;br&gt;Usage: docker [OPTIONS] COMMAND [arg…]&lt;br&gt; -H=[unix:///var/run/docker.sock]: tcp://host:port to bind/connect to or unix://path/to/socket to use&lt;/p&gt;
+&lt;p&gt;A self-sufficient runtime for linux containers.&lt;/p&gt;
+&lt;p&gt;Commands:&lt;br&gt;    attach    Attach to a running container                 &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;          # 当前shell下attach连接指定运行镜像  
+build     Build an image from a Dockerfile              
+          # 通过Dockerfile定制镜像
+commit    Create a new image from a container&amp;apos;s changes 
+          # 提交当前容器为新的镜像
+cp        Copy files/folders from the containers filesystem to the host path  
+          # 从容器中拷贝指定文件或者目录到宿主机中  
+diff      Inspect changes on a container&amp;apos;s filesystem   
+          # 查看docker容器变化  
+events    Get real time events from the server          
+          # 从docker服务获取容器实时事件
+export    Stream the contents of a container as a tar archive     
+          # 导出容器的内容流作为一个tar归档文件[对应import]  
+history   Show the history of an image    
+          # 展示一个镜像形成历史  
+images    List images    # 列出系统当前镜像  
+import    Create a new filesystem image from the contents of a tarball    
+          # 从tar包中的内容创建一个新的文件系统映像[对应export]  
+info      Display system-wide information   # 显示系统相关信息    
+inspect   Return low-level information on a container    
+          # 查看容器详细信息  
+kill      Kill a running container                        
+          # kill指定docker容器  
+load    Load an image from a tar archive               
+       # 从一个tar包中加载一个镜像[对应save]   login     Register or Login to the docker registry server   
+          # 注册或者登陆一个docker源服务器  
+logs      Fetch the logs of a container  
+          # 输出当前容器日志信息
+port      Lookup the public-facing port which is NAT-ed to PRIVATE_PORT  
+          # 查看映射端口对应的容器内部源端口  
+pause     Pause all processes within a container          
+          # 暂停容器  
+ps        List containers                               
+          # 列出容器列表  
+pull      Pull an image or a repository from the docker registry server  
+          # 从docker镜像源服务器拉取指定镜像或者库镜像  
+push      Push an image or a repository to the docker registry server  
+          # 推送指定镜像或者库镜像至docker源服务器  
+restart   Restart a running container                   
+          # 重启运行的容器    
+rm        Remove one or more containers                   
+          # 移除一个或者多个容器    
+rmi       Remove one or more images                 
+          # 移除一个或多个镜像[无容器使用该镜像才可删除，否则需删除相关容器才可继续或-f强制删除]    
+run       Run a command in a new container
+          # 在一个新的容器中运行一个命令    
+save      Save an image to a tar archive  
+          # 保存一个镜像为一个tar包[对应load]  
+search    Search for an image in the docker index       
+          # 在docker index中搜索镜像  
+start     Start a stopped containers                    # 启动容器
+stop      Stop a running containers                     # 停止容器
+tag       Tag an image into a repository                # 给源中镜像打标签
+top       Lookup the running processes of a container   # 查看容器中运行的进程信息
+unpause   Unpause a paused container                    # 取消暂停容器
+version   Show the docker version information           # 查看docker版本号
+wait      Block until a container stops, then print its exit code   
+          # 截取容器停止时的退出状态值
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      Docker学习
+    
+    </summary>
+    
+      <category term="Docker" scheme="zhangweiheu.github.io/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="zhangweiheu.github.io/tags/Docker/"/>
+    
+      <category term="Dockerfile" scheme="zhangweiheu.github.io/tags/Dockerfile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java线程状态知识点</title>
+    <link href="zhangweiheu.github.io/2016/04/18/Java%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>zhangweiheu.github.io/2016/04/18/Java线程状态知识点/</id>
+    <published>2016-04-18T08:34:52.000Z</published>
+    <updated>2016-04-29T10:32:24.675Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Thread和Runnable实现线程的异同&quot;&gt;&lt;a href=&quot;#Thread和Runnable实现线程的异同&quot; class=&quot;headerlink&quot; title=&quot;Thread和Runnable实现线程的异同&quot;&gt;&lt;/a&gt;Thread和Runnable实现线程的异同&lt;/h2&gt;&lt;h3 id=&quot;相同点&quot;&gt;&lt;a href=&quot;#相同点&quot; class=&quot;headerlink&quot; title=&quot;相同点&quot;&gt;&lt;/a&gt;相同点&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;都是多线程实现的方式  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;不同点&quot;&gt;&lt;a href=&quot;#不同点&quot; class=&quot;headerlink&quot; title=&quot;不同点&quot;&gt;&lt;/a&gt;不同点&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Thread是类，而Runnable是接口；Thread是实现了Runnable接口的类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Runnable具有更好的扩展性，即多个线程都是基于某一个Runnable对象建立的，它们会共享Runnable对象的资源。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Thread类包含的start-和Run-方法的区别&quot;&gt;&lt;a href=&quot;#Thread类包含的start-和Run-方法的区别&quot; class=&quot;headerlink&quot; title=&quot;Thread类包含的start()和Run()方法的区别&quot;&gt;&lt;/a&gt;Thread类包含的start()和Run()方法的区别&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;start()：它的作用是启动一个新的线程，新线程会执行相应的Run()方法；start()不能被重复调用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;run():与普通的成员方法一样，可以被重复调用。单独调用会在当前线程中执行run(),而不会启动新线程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;线程状态sleep-、yield-、wait-区别&quot;&gt;&lt;a href=&quot;#线程状态sleep-、yield-、wait-区别&quot; class=&quot;headerlink&quot; title=&quot;线程状态sleep()、yield()、wait()区别&quot;&gt;&lt;/a&gt;线程状态sleep()、yield()、wait()区别&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;sleep()会给其他线程运行的机会，而不考虑其他线程的优先级，因此会给较低优先级的线程一个运行的机会；yield()只会给不小于自己优先级的线程一个运行的机会。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当线程执行sleep()方法后，参数long millis指定睡眠时间，转到阻塞状态；当线程执行yield()方法后进入就绪状态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;sleep()方法声明抛出InterruptedException异常，而yield()方法没有声明异常。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;sleep()比yield()方法具有更好的移植性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;线程调用自身的sleep()或者其他线程的join()方法，进入阻塞状态，该状态停止当前线程但不释放资源，当sleep()或者join()的线程结束以后进入就绪状态&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Object.wait()对象锁，释放资源，notify()唤醒回到wait()前中断现场。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150827111349802&quot; alt=&quot;线程状态转换&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      线程状态知识
+    
+    </summary>
+    
+      <category term="Java基础" scheme="zhangweiheu.github.io/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="多线程" scheme="zhangweiheu.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven本地安装jar文件</title>
+    <link href="zhangweiheu.github.io/2016/04/17/Maven%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85jar%E6%96%87%E4%BB%B6/"/>
+    <id>zhangweiheu.github.io/2016/04/17/Maven本地安装jar文件/</id>
+    <published>2016-04-17T12:54:59.000Z</published>
+    <updated>2016-05-04T03:19:38.329Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;maven本地仓库安装jar和源文件&quot;&gt;&lt;a href=&quot;#maven本地仓库安装jar和源文件&quot; class=&quot;headerlink&quot; title=&quot;maven本地仓库安装jar和源文件&quot;&gt;&lt;/a&gt;maven本地仓库安装jar和源文件&lt;/h3&gt;&lt;p&gt;mvn install:install-file -Dfile=”f:\alipay-sdk-java-1.5-source.jar” -DgroupId=”alipay” -DartifactId=”sdk-java” -Dversion=”1.5” -Dpackaging=jar  //-Dclassifier=sources&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      maven本地仓库安装jar
+    
+    </summary>
+    
+      <category term="Maven" scheme="zhangweiheu.github.io/categories/Maven/"/>
+    
+    
+      <category term="Maven" scheme="zhangweiheu.github.io/tags/Maven/"/>
+    
+  </entry>
+  
+</feed>

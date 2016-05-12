@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Docker修改系统时区]]></title>
+      <url>zhangweiheu.github.io/2016/05/08/Docker%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%8C%BA/</url>
+      <content type="html"><![CDATA[<h3 id="Ubantu修改系统时区"><a href="#Ubantu修改系统时区" class="headerlink" title="Ubantu修改系统时区"></a>Ubantu修改系统时区</h3><p>直接修改/etc/timezone<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Asia/shanghai&quot; &gt; /etc/timezone</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### Centos修改系统时区  </span><br><span class="line">```shell</span><br><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure></p>
+<hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MongoDB备份与恢复命令]]></title>
+      <url>zhangweiheu.github.io/2016/05/05/MongoDB%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>先到mongodb/bin/目录下</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>./mongodump –db xxx(数据库名称)  –out /xxx/(备份路径)<br>默认路径在当前路径下：dump/xxx   </p>
+<h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><p>./mongorestore –db xxx(数据库名称) ./xxx(数据库备份路径)</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Tar命令]]></title>
+      <url>zhangweiheu.github.io/2016/05/05/tar%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h3 id="解压命令"><a href="#解压命令" class="headerlink" title="解压命令"></a>解压命令</h3><p> tar -zxvf ./xxx.tar.gz</p>
+<h3 id="压缩命令"><a href="#压缩命令" class="headerlink" title="压缩命令"></a>压缩命令</h3><p> tar -czvf ./xxx.tar.gz xxx</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p> Cannot open: Permission denied;<br>  没有权限</p>
+<hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Vim]]></title>
+      <url>zhangweiheu.github.io/2016/04/29/Vim/</url>
+      <content type="html"><![CDATA[<h4 id="Ubantu安装软件异常"><a href="#Ubantu安装软件异常" class="headerlink" title="Ubantu安装软件异常"></a>Ubantu安装软件异常</h4><ul>
+<li>Unable to locate package vim</li>
+<li>Package ‘vim-nox’ has no installation candidate</li>
+</ul>
+<p>解决方法：apt-get update  </p>
+<hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Jenkins插件]]></title>
+      <url>zhangweiheu.github.io/2016/04/28/Jenkins%E6%8F%92%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<h3 id="安装jenkins后“可选插件”列表为空"><a href="#安装jenkins后“可选插件”列表为空" class="headerlink" title="安装jenkins后“可选插件”列表为空"></a>安装jenkins后“可选插件”列表为空</h3><p>因为插件站点被qiang,解决方法：更换插件源<br>选择插件管理-&gt;高级-&gt;升级站点-&gt;更改url为：<a href="http://mirror.xmission.com/jenkins/updates/update-center.json" target="_blank" rel="external">http://mirror.xmission.com/jenkins/updates/update-center.json</a> 点击提交<br>完事</p>
+<hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Docker]]></title>
+      <url>zhangweiheu.github.io/2016/04/27/Docker/</url>
+      <content type="html"><![CDATA[<h2 id="Docker学习"><a href="#Docker学习" class="headerlink" title="Docker学习"></a>Docker学习</h2><h3 id="docker安装-系统必须64位"><a href="#docker安装-系统必须64位" class="headerlink" title="docker安装(系统必须64位)"></a>docker安装(系统必须64位)</h3><ul>
+<li>centos7:yun install docker,由于docker国内官方没有站点，比较慢，所以建议使用镜像站，安装docker</li>
+</ul>
+<h3 id="dockerfile构建新的镜像"><a href="#dockerfile构建新的镜像" class="headerlink" title="dockerfile构建新的镜像"></a>dockerfile构建新的镜像</h3><h5 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h5><p>  RUN：镜像构建时要运行的命令，不同于使用docker run启动容器；<br>  CMD：容器启动时要运行的命令，docker run中的命令会覆盖CMD中的命令；eg:CMD[“bash”,”-1”]<br>  ENTRYPOINT：类似于CMD指令，但是该指令不容易在容器启动时被覆盖，而docker run中的参数会被再次传递给ENTRYPOINT；eg：ENTRYPOINT[“nginx”,”-g”,”daemon off”]<br>  WORKDIR：<br>  ENV：<br>  USER：指定该镜像以什么身份去运行；eg:USER zhangwei:administor<br>  VOLUME：用来向基于镜像的容器添加卷<br>  ADD：复制并解压文件<br>  COPY：只是复制文件<br>  ONBUILD：为镜像添加触发器，<br>  docker 命令 ：docker exec -it containerID/NAME /bin/bash  </p>
+<h3 id="Docker基本命令"><a href="#Docker基本命令" class="headerlink" title="Docker基本命令"></a>Docker基本命令</h3><p>$ sudo docker   # docker命令帮助<br>Usage: docker [OPTIONS] COMMAND [arg…]<br> -H=[unix:///var/run/docker.sock]: tcp://host:port to bind/connect to or unix://path/to/socket to use</p>
+<p>A self-sufficient runtime for linux containers.</p>
+<p>Commands:<br>    attach    Attach to a running container                 </p>
+<pre><code>          # 当前shell下attach连接指定运行镜像  
+build     Build an image from a Dockerfile              
+          # 通过Dockerfile定制镜像
+commit    Create a new image from a container&apos;s changes 
+          # 提交当前容器为新的镜像
+cp        Copy files/folders from the containers filesystem to the host path  
+          # 从容器中拷贝指定文件或者目录到宿主机中  
+diff      Inspect changes on a container&apos;s filesystem   
+          # 查看docker容器变化  
+events    Get real time events from the server          
+          # 从docker服务获取容器实时事件
+export    Stream the contents of a container as a tar archive     
+          # 导出容器的内容流作为一个tar归档文件[对应import]  
+history   Show the history of an image    
+          # 展示一个镜像形成历史  
+images    List images    # 列出系统当前镜像  
+import    Create a new filesystem image from the contents of a tarball    
+          # 从tar包中的内容创建一个新的文件系统映像[对应export]  
+info      Display system-wide information   # 显示系统相关信息    
+inspect   Return low-level information on a container    
+          # 查看容器详细信息  
+kill      Kill a running container                        
+          # kill指定docker容器  
+load    Load an image from a tar archive               
+       # 从一个tar包中加载一个镜像[对应save]   login     Register or Login to the docker registry server   
+          # 注册或者登陆一个docker源服务器  
+logs      Fetch the logs of a container  
+          # 输出当前容器日志信息
+port      Lookup the public-facing port which is NAT-ed to PRIVATE_PORT  
+          # 查看映射端口对应的容器内部源端口  
+pause     Pause all processes within a container          
+          # 暂停容器  
+ps        List containers                               
+          # 列出容器列表  
+pull      Pull an image or a repository from the docker registry server  
+          # 从docker镜像源服务器拉取指定镜像或者库镜像  
+push      Push an image or a repository to the docker registry server  
+          # 推送指定镜像或者库镜像至docker源服务器  
+restart   Restart a running container                   
+          # 重启运行的容器    
+rm        Remove one or more containers                   
+          # 移除一个或者多个容器    
+rmi       Remove one or more images                 
+          # 移除一个或多个镜像[无容器使用该镜像才可删除，否则需删除相关容器才可继续或-f强制删除]    
+run       Run a command in a new container
+          # 在一个新的容器中运行一个命令    
+save      Save an image to a tar archive  
+          # 保存一个镜像为一个tar包[对应load]  
+search    Search for an image in the docker index       
+          # 在docker index中搜索镜像  
+start     Start a stopped containers                    # 启动容器
+stop      Stop a running containers                     # 停止容器
+tag       Tag an image into a repository                # 给源中镜像打标签
+top       Lookup the running processes of a container   # 查看容器中运行的进程信息
+unpause   Unpause a paused container                    # 取消暂停容器
+version   Show the docker version information           # 查看docker版本号
+wait      Block until a container stops, then print its exit code   
+          # 截取容器停止时的退出状态值
+</code></pre><hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Java线程状态知识点]]></title>
+      <url>zhangweiheu.github.io/2016/04/18/Java%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+      <content type="html"><![CDATA[<h2 id="Thread和Runnable实现线程的异同"><a href="#Thread和Runnable实现线程的异同" class="headerlink" title="Thread和Runnable实现线程的异同"></a>Thread和Runnable实现线程的异同</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ul>
+<li>都是多线程实现的方式  </li>
+</ul>
+<h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ul>
+<li><p>Thread是类，而Runnable是接口；Thread是实现了Runnable接口的类。</p>
+</li>
+<li><p>Runnable具有更好的扩展性，即多个线程都是基于某一个Runnable对象建立的，它们会共享Runnable对象的资源。</p>
+</li>
+</ul>
+<h2 id="Thread类包含的start-和Run-方法的区别"><a href="#Thread类包含的start-和Run-方法的区别" class="headerlink" title="Thread类包含的start()和Run()方法的区别"></a>Thread类包含的start()和Run()方法的区别</h2><ul>
+<li><p>start()：它的作用是启动一个新的线程，新线程会执行相应的Run()方法；start()不能被重复调用。</p>
+</li>
+<li><p>run():与普通的成员方法一样，可以被重复调用。单独调用会在当前线程中执行run(),而不会启动新线程。</p>
+</li>
+</ul>
+<h2 id="线程状态sleep-、yield-、wait-区别"><a href="#线程状态sleep-、yield-、wait-区别" class="headerlink" title="线程状态sleep()、yield()、wait()区别"></a>线程状态sleep()、yield()、wait()区别</h2><ul>
+<li><p>sleep()会给其他线程运行的机会，而不考虑其他线程的优先级，因此会给较低优先级的线程一个运行的机会；yield()只会给不小于自己优先级的线程一个运行的机会。</p>
+</li>
+<li><p>当线程执行sleep()方法后，参数long millis指定睡眠时间，转到阻塞状态；当线程执行yield()方法后进入就绪状态。</p>
+</li>
+<li><p>sleep()方法声明抛出InterruptedException异常，而yield()方法没有声明异常。</p>
+</li>
+<li><p>sleep()比yield()方法具有更好的移植性</p>
+</li>
+<li><p>线程调用自身的sleep()或者其他线程的join()方法，进入阻塞状态，该状态停止当前线程但不释放资源，当sleep()或者join()的线程结束以后进入就绪状态</p>
+</li>
+<li><p>Object.wait()对象锁，释放资源，notify()唤醒回到wait()前中断现场。</p>
+</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20150827111349802" alt="线程状态转换"></p>
+<hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Maven本地安装jar文件]]></title>
+      <url>zhangweiheu.github.io/2016/04/17/Maven%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85jar%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<h3 id="maven本地仓库安装jar和源文件"><a href="#maven本地仓库安装jar和源文件" class="headerlink" title="maven本地仓库安装jar和源文件"></a>maven本地仓库安装jar和源文件</h3><p>mvn install:install-file -Dfile=”f:\alipay-sdk-java-1.5-source.jar” -DgroupId=”alipay” -DartifactId=”sdk-java” -Dversion=”1.5” -Dpackaging=jar  //-Dclassifier=sources</p>
+<hr>
+]]></content>
+    </entry>
+    
+  
+  
+</search>

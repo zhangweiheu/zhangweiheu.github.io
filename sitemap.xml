@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.zhangweiheu.cn/about/index.html</loc>
+    
+    <lastmod>2016-05-31T13:12:28.422Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.zhangweiheu.cn/message/index.html</loc>
     
     <lastmod>2016-05-31T10:02:14.732Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.zhangweiheu.cn/2016/05/28/SSH%E6%9D%83%E9%99%90/</loc>
     
     <lastmod>2016-05-31T09:42:10.750Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.zhangweiheu.cn/about/index.html</loc>
-    
-    <lastmod>2016-05-31T09:27:59.412Z</lastmod>
     
   </url>
   

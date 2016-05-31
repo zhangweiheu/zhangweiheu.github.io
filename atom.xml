@@ -4,9 +4,9 @@
   <subtitle>不忘初心，方得始终</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="zhangweiheu.github.io/"/>
-  <updated>2016-05-31T03:56:18.380Z</updated>
-  <id>zhangweiheu.github.io/</id>
+  <link href="http://blog.zhangweiheu.cn/"/>
+  <updated>2016-05-31T09:42:10.750Z</updated>
+  <id>http://blog.zhangweiheu.cn/</id>
   
   <author>
     <name>zhangwei</name>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Ssh权限</title>
-    <link href="zhangweiheu.github.io/2016/05/28/SSH%E6%9D%83%E9%99%90/"/>
-    <id>zhangweiheu.github.io/2016/05/28/SSH权限/</id>
+    <title>SSH权限</title>
+    <link href="http://blog.zhangweiheu.cn/2016/05/28/SSH%E6%9D%83%E9%99%90/"/>
+    <id>http://blog.zhangweiheu.cn/2016/05/28/SSH权限/</id>
     <published>2016-05-28T13:31:39.000Z</published>
-    <updated>2016-05-31T03:56:18.380Z</updated>
+    <updated>2016-05-31T09:42:10.750Z</updated>
     
     <content type="html">&lt;h4 id=&quot;ssh权限&quot;&gt;&lt;a href=&quot;#ssh权限&quot; class=&quot;headerlink&quot; title=&quot;ssh权限&quot;&gt;&lt;/a&gt;ssh权限&lt;/h4&gt;&lt;p&gt;　今天Win机器换了密钥对，所以要更新机器上的公钥，在给自己新增加的用户添加完密钥以后，Xshell登陆时发现使用新的密钥登陆不上去，提示密钥未在远程主机上注册，在google以后发现是文件夹和authorized_keys的权限问题。　&lt;/p&gt;
 &lt;hr&gt;
@@ -32,17 +32,17 @@
     
     </summary>
     
-      <category term="Linux" scheme="zhangweiheu.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="http://blog.zhangweiheu.cn/categories/Linux/"/>
     
     
-      <category term="ssh" scheme="zhangweiheu.github.io/tags/ssh/"/>
+      <category term="SSH" scheme="http://blog.zhangweiheu.cn/tags/SSH/"/>
     
   </entry>
   
   <entry>
     <title>岛上书店</title>
-    <link href="zhangweiheu.github.io/2016/05/28/%E5%B2%9B%E4%B8%8A%E4%B9%A6%E5%BA%97/"/>
-    <id>zhangweiheu.github.io/2016/05/28/岛上书店/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/05/28/%E5%B2%9B%E4%B8%8A%E4%B9%A6%E5%BA%97/"/>
+    <id>http://blog.zhangweiheu.cn/2016/05/28/岛上书店/</id>
     <published>2016-05-28T08:50:38.000Z</published>
     <updated>2016-05-30T13:50:54.378Z</updated>
     
@@ -67,17 +67,17 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="zhangweiheu.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://blog.zhangweiheu.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="文学" scheme="zhangweiheu.github.io/tags/%E6%96%87%E5%AD%A6/"/>
+      <category term="文学" scheme="http://blog.zhangweiheu.cn/tags/%E6%96%87%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>Docker修改系统时区</title>
-    <link href="zhangweiheu.github.io/2016/05/08/Docker%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%8C%BA/"/>
-    <id>zhangweiheu.github.io/2016/05/08/Docker修改系统时区/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/05/08/Docker%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%8C%BA/"/>
+    <id>http://blog.zhangweiheu.cn/2016/05/08/Docker修改系统时区/</id>
     <published>2016-05-08T06:13:51.000Z</published>
     <updated>2016-05-08T06:49:43.704Z</updated>
     
@@ -91,19 +91,19 @@
     
     </summary>
     
-      <category term="Docker" scheme="zhangweiheu.github.io/categories/Docker/"/>
+      <category term="Docker" scheme="http://blog.zhangweiheu.cn/categories/Docker/"/>
     
     
-      <category term="Docker" scheme="zhangweiheu.github.io/tags/Docker/"/>
+      <category term="Docker" scheme="http://blog.zhangweiheu.cn/tags/Docker/"/>
     
-      <category term="TimeZone" scheme="zhangweiheu.github.io/tags/TimeZone/"/>
+      <category term="TimeZone" scheme="http://blog.zhangweiheu.cn/tags/TimeZone/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB备份与恢复命令</title>
-    <link href="zhangweiheu.github.io/2016/05/05/MongoDB%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4/"/>
-    <id>zhangweiheu.github.io/2016/05/05/MongoDB备份与恢复命令/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/05/05/MongoDB%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.zhangweiheu.cn/2016/05/05/MongoDB备份与恢复命令/</id>
     <published>2016-05-05T12:19:45.000Z</published>
     <updated>2016-05-05T13:42:18.542Z</updated>
     
@@ -119,17 +119,17 @@
     
     </summary>
     
-      <category term="MongoDB" scheme="zhangweiheu.github.io/categories/MongoDB/"/>
+      <category term="MongoDB" scheme="http://blog.zhangweiheu.cn/categories/MongoDB/"/>
     
     
-      <category term="MongoDB" scheme="zhangweiheu.github.io/tags/MongoDB/"/>
+      <category term="MongoDB" scheme="http://blog.zhangweiheu.cn/tags/MongoDB/"/>
     
   </entry>
   
   <entry>
     <title>Tar命令</title>
-    <link href="zhangweiheu.github.io/2016/05/05/tar%E5%91%BD%E4%BB%A4/"/>
-    <id>zhangweiheu.github.io/2016/05/05/tar命令/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/05/05/tar%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.zhangweiheu.cn/2016/05/05/tar命令/</id>
     <published>2016-05-05T12:13:16.000Z</published>
     <updated>2016-05-15T09:13:25.986Z</updated>
     
@@ -145,17 +145,17 @@
     
     </summary>
     
-      <category term="Linux" scheme="zhangweiheu.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="http://blog.zhangweiheu.cn/categories/Linux/"/>
     
     
-      <category term="tar" scheme="zhangweiheu.github.io/tags/tar/"/>
+      <category term="tar" scheme="http://blog.zhangweiheu.cn/tags/tar/"/>
     
   </entry>
   
   <entry>
     <title>Vim</title>
-    <link href="zhangweiheu.github.io/2016/04/29/Vim/"/>
-    <id>zhangweiheu.github.io/2016/04/29/Vim/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/04/29/Vim/"/>
+    <id>http://blog.zhangweiheu.cn/2016/04/29/Vim/</id>
     <published>2016-04-29T10:21:30.000Z</published>
     <updated>2016-05-04T03:20:06.284Z</updated>
     
@@ -173,19 +173,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="zhangweiheu.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="http://blog.zhangweiheu.cn/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="zhangweiheu.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.zhangweiheu.cn/tags/Linux/"/>
     
-      <category term="Vim" scheme="zhangweiheu.github.io/tags/Vim/"/>
+      <category term="Vim" scheme="http://blog.zhangweiheu.cn/tags/Vim/"/>
     
   </entry>
   
   <entry>
     <title>Jenkins插件</title>
-    <link href="zhangweiheu.github.io/2016/04/28/Jenkins%E6%8F%92%E4%BB%B6/"/>
-    <id>zhangweiheu.github.io/2016/04/28/Jenkins插件/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/04/28/Jenkins%E6%8F%92%E4%BB%B6/"/>
+    <id>http://blog.zhangweiheu.cn/2016/04/28/Jenkins插件/</id>
     <published>2016-04-28T14:32:53.000Z</published>
     <updated>2016-05-04T03:19:15.285Z</updated>
     
@@ -199,19 +199,19 @@
     
     </summary>
     
-      <category term="Jenkins" scheme="zhangweiheu.github.io/categories/Jenkins/"/>
+      <category term="Jenkins" scheme="http://blog.zhangweiheu.cn/categories/Jenkins/"/>
     
     
-      <category term="Docker" scheme="zhangweiheu.github.io/tags/Docker/"/>
+      <category term="Docker" scheme="http://blog.zhangweiheu.cn/tags/Docker/"/>
     
-      <category term="Jenkins" scheme="zhangweiheu.github.io/tags/Jenkins/"/>
+      <category term="Jenkins" scheme="http://blog.zhangweiheu.cn/tags/Jenkins/"/>
     
   </entry>
   
   <entry>
     <title>Docker</title>
-    <link href="zhangweiheu.github.io/2016/04/27/Docker/"/>
-    <id>zhangweiheu.github.io/2016/04/27/Docker/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/04/27/Docker/"/>
+    <id>http://blog.zhangweiheu.cn/2016/04/27/Docker/</id>
     <published>2016-04-27T05:05:50.000Z</published>
     <updated>2016-05-04T03:18:28.741Z</updated>
     
@@ -289,19 +289,19 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="Docker" scheme="zhangweiheu.github.io/categories/Docker/"/>
+      <category term="Docker" scheme="http://blog.zhangweiheu.cn/categories/Docker/"/>
     
     
-      <category term="Docker" scheme="zhangweiheu.github.io/tags/Docker/"/>
+      <category term="Docker" scheme="http://blog.zhangweiheu.cn/tags/Docker/"/>
     
-      <category term="Dockerfile" scheme="zhangweiheu.github.io/tags/Dockerfile/"/>
+      <category term="Dockerfile" scheme="http://blog.zhangweiheu.cn/tags/Dockerfile/"/>
     
   </entry>
   
   <entry>
     <title>Java线程状态知识点</title>
-    <link href="zhangweiheu.github.io/2016/04/18/Java%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <id>zhangweiheu.github.io/2016/04/18/Java线程状态知识点/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/04/18/Java%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://blog.zhangweiheu.cn/2016/04/18/Java线程状态知识点/</id>
     <published>2016-04-18T08:34:52.000Z</published>
     <updated>2016-04-29T10:32:24.675Z</updated>
     
@@ -344,17 +344,17 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="Java基础" scheme="zhangweiheu.github.io/categories/Java%E5%9F%BA%E7%A1%80/"/>
+      <category term="Java基础" scheme="http://blog.zhangweiheu.cn/categories/Java%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="多线程" scheme="zhangweiheu.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://blog.zhangweiheu.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Maven本地安装jar文件</title>
-    <link href="zhangweiheu.github.io/2016/04/17/Maven%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85jar%E6%96%87%E4%BB%B6/"/>
-    <id>zhangweiheu.github.io/2016/04/17/Maven本地安装jar文件/</id>
+    <link href="http://blog.zhangweiheu.cn/2016/04/17/Maven%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85jar%E6%96%87%E4%BB%B6/"/>
+    <id>http://blog.zhangweiheu.cn/2016/04/17/Maven本地安装jar文件/</id>
     <published>2016-04-17T12:54:59.000Z</published>
     <updated>2016-05-15T09:01:38.972Z</updated>
     
@@ -370,17 +370,17 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="Maven" scheme="zhangweiheu.github.io/categories/Maven/"/>
+      <category term="Maven" scheme="http://blog.zhangweiheu.cn/categories/Maven/"/>
     
     
-      <category term="Maven" scheme="zhangweiheu.github.io/tags/Maven/"/>
+      <category term="Maven" scheme="http://blog.zhangweiheu.cn/tags/Maven/"/>
     
   </entry>
   
   <entry>
     <title>实习月度总结</title>
-    <link href="zhangweiheu.github.io/2015/11/21/%E5%AE%9E%E4%B9%A0%E4%B8%80%E4%B8%AA%E6%9C%88%E6%80%BB%E7%BB%93/"/>
-    <id>zhangweiheu.github.io/2015/11/21/实习一个月总结/</id>
+    <link href="http://blog.zhangweiheu.cn/2015/11/21/%E5%AE%9E%E4%B9%A0%E4%B8%80%E4%B8%AA%E6%9C%88%E6%80%BB%E7%BB%93/"/>
+    <id>http://blog.zhangweiheu.cn/2015/11/21/实习一个月总结/</id>
     <published>2015-11-21T13:49:03.000Z</published>
     <updated>2016-05-15T09:10:25.800Z</updated>
     
@@ -414,19 +414,19 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="生活" scheme="zhangweiheu.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://blog.zhangweiheu.cn/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="实习" scheme="zhangweiheu.github.io/tags/%E5%AE%9E%E4%B9%A0/"/>
+      <category term="实习" scheme="http://blog.zhangweiheu.cn/tags/%E5%AE%9E%E4%B9%A0/"/>
     
-      <category term="总结" scheme="zhangweiheu.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://blog.zhangweiheu.cn/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>第一个小模块开发总结</title>
-    <link href="zhangweiheu.github.io/2015/11/12/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"/>
-    <id>zhangweiheu.github.io/2015/11/12/第一个小模块开发总结/</id>
+    <link href="http://blog.zhangweiheu.cn/2015/11/12/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"/>
+    <id>http://blog.zhangweiheu.cn/2015/11/12/第一个小模块开发总结/</id>
     <published>2015-11-12T15:43:21.000Z</published>
     <updated>2015-11-12T16:12:18.443Z</updated>
     
@@ -454,21 +454,21 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="实习总结" scheme="zhangweiheu.github.io/categories/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+      <category term="实习总结" scheme="http://blog.zhangweiheu.cn/categories/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
     
     
-      <category term="待更新" scheme="zhangweiheu.github.io/tags/%E5%BE%85%E6%9B%B4%E6%96%B0/"/>
+      <category term="待更新" scheme="http://blog.zhangweiheu.cn/tags/%E5%BE%85%E6%9B%B4%E6%96%B0/"/>
     
-      <category term="实习" scheme="zhangweiheu.github.io/tags/%E5%AE%9E%E4%B9%A0/"/>
+      <category term="实习" scheme="http://blog.zhangweiheu.cn/tags/%E5%AE%9E%E4%B9%A0/"/>
     
-      <category term="代码规范" scheme="zhangweiheu.github.io/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+      <category term="代码规范" scheme="http://blog.zhangweiheu.cn/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
     
   </entry>
   
   <entry>
     <title>实习开始</title>
-    <link href="zhangweiheu.github.io/2015/11/05/%E5%AE%9E%E4%B9%A0%E5%BC%80%E5%A7%8B/"/>
-    <id>zhangweiheu.github.io/2015/11/05/实习开始/</id>
+    <link href="http://blog.zhangweiheu.cn/2015/11/05/%E5%AE%9E%E4%B9%A0%E5%BC%80%E5%A7%8B/"/>
+    <id>http://blog.zhangweiheu.cn/2015/11/05/实习开始/</id>
     <published>2015-11-05T15:50:42.000Z</published>
     <updated>2016-05-15T09:12:10.692Z</updated>
     
@@ -485,19 +485,19 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="生活" scheme="zhangweiheu.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://blog.zhangweiheu.cn/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="生活" scheme="zhangweiheu.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://blog.zhangweiheu.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="实习" scheme="zhangweiheu.github.io/tags/%E5%AE%9E%E4%B9%A0/"/>
+      <category term="实习" scheme="http://blog.zhangweiheu.cn/tags/%E5%AE%9E%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>Vim快捷键</title>
-    <link href="zhangweiheu.github.io/2015/11/02/Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>zhangweiheu.github.io/2015/11/02/Vim快捷键/</id>
+    <link href="http://blog.zhangweiheu.cn/2015/11/02/Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://blog.zhangweiheu.cn/2015/11/02/Vim快捷键/</id>
     <published>2015-11-02T14:49:13.000Z</published>
     <updated>2016-05-15T09:12:21.723Z</updated>
     
@@ -683,17 +683,17 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="Linux" scheme="zhangweiheu.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="http://blog.zhangweiheu.cn/categories/Linux/"/>
     
     
-      <category term="Vim" scheme="zhangweiheu.github.io/tags/Vim/"/>
+      <category term="Vim" scheme="http://blog.zhangweiheu.cn/tags/Vim/"/>
     
   </entry>
   
   <entry>
     <title>初遇北京</title>
-    <link href="zhangweiheu.github.io/2015/11/01/%E5%88%9D%E9%81%87%E5%8C%97%E4%BA%AC/"/>
-    <id>zhangweiheu.github.io/2015/11/01/初遇北京/</id>
+    <link href="http://blog.zhangweiheu.cn/2015/11/01/%E5%88%9D%E9%81%87%E5%8C%97%E4%BA%AC/"/>
+    <id>http://blog.zhangweiheu.cn/2015/11/01/初遇北京/</id>
     <published>2015-11-01T09:18:52.000Z</published>
     <updated>2016-05-15T09:11:25.895Z</updated>
     
@@ -710,21 +710,21 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="生活" scheme="zhangweiheu.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://blog.zhangweiheu.cn/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="生活" scheme="zhangweiheu.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://blog.zhangweiheu.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="北京" scheme="zhangweiheu.github.io/tags/%E5%8C%97%E4%BA%AC/"/>
+      <category term="北京" scheme="http://blog.zhangweiheu.cn/tags/%E5%8C%97%E4%BA%AC/"/>
     
-      <category term="初遇" scheme="zhangweiheu.github.io/tags/%E5%88%9D%E9%81%87/"/>
+      <category term="初遇" scheme="http://blog.zhangweiheu.cn/tags/%E5%88%9D%E9%81%87/"/>
     
   </entry>
   
   <entry>
     <title>Java五大原则</title>
-    <link href="zhangweiheu.github.io/2015/10/13/Java%E4%BA%94%E5%A4%A7%E5%8E%9F%E5%88%99/"/>
-    <id>zhangweiheu.github.io/2015/10/13/Java五大原则/</id>
+    <link href="http://blog.zhangweiheu.cn/2015/10/13/Java%E4%BA%94%E5%A4%A7%E5%8E%9F%E5%88%99/"/>
+    <id>http://blog.zhangweiheu.cn/2015/10/13/Java五大原则/</id>
     <published>2015-10-13T11:57:28.000Z</published>
     <updated>2016-05-15T08:58:01.861Z</updated>
     
@@ -790,12 +790,12 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="设计模式之禅" scheme="zhangweiheu.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85/"/>
+      <category term="设计模式之禅" scheme="http://blog.zhangweiheu.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85/"/>
     
     
-      <category term="Java" scheme="zhangweiheu.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://blog.zhangweiheu.cn/tags/Java/"/>
     
-      <category term="设计模式" scheme="zhangweiheu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://blog.zhangweiheu.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   

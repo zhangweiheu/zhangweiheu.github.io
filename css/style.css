@@ -81,7 +81,7 @@ a:focus {
       #header #nav-menu a:hover {
         border-bottom-color: #444; }
       #header #nav-menu a.current {
-        border: 1px solid #ddd;
+        border: 1px solid #555;
         border-bottom-color: #fff; }
 
 #sidebar {
@@ -246,24 +246,62 @@ a:focus {
         display: inline-block; }
 
 .page-navigator {
-  border-top: 1px solid #ddd;
-  list-style: none;
-  margin-top: 25px;
-  padding: 25px 0;
-  font-size: 14px; }
-  .page-navigator a {
-    display: inline-block;
-    height: 25px;
-    line-height: 25px;
-    padding: 5px 20px;
-    border: 1px solid #DDD;
-    float: left; }
-    .page-navigator a.pre {
-      float: left; }
-    .page-navigator a.next {
-      float: right; }
-    .page-navigator a:hover {
-      border-color: #999; }
+    border-top: 1px solid #ddd;
+    list-style: none;
+    margin-top: 25px;
+    padding: 25px 0 0;
+    font-size: 14px;
+    text-align: center;
+}
+.page-navigator a,.page-navigator span {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        padding: 5px 9px;
+        border: 1px solid #DDD;
+        text-align: center;
+    }
+.page-navigator a:hover {
+            background: #F8F8F8;
+            border-bottom-color: #D26911;
+        }
+.page-navigator span:hover {
+            background: #F8F8F8;
+            border-bottom-color: #D26911;
+          }
+.page-navigator a.prev {
+            float: left;
+            border-radius: 5px;
+            a:before {
+                font-family: "FontAwesome";
+                content: "\f100";
+                padding-right: 0.3em;
+            }
+          }
+.page-navigator a.next {
+            float: right;
+            border-radius: 5px;
+            a:after {
+                font-family: "FontAwesome";
+                content: "\f101";
+                padding-left: 0.3em;
+            }
+          }
+.page-navigator .page-number {
+        display: inline-block;
+        margin: 0 2px 2px 0;
+        border: 1px solid #DDD;
+        border-radius: 5px;
+    }
+
+span.page-number.current {
+        border-bottom-color: #D26911;
+        background-color: #DDD; 
+      }
+.page-navigator .space {
+        border: none;
+        padding: 5px 5px;
+      }
 
 #footer {
   padding: .8em 0 3.6em;

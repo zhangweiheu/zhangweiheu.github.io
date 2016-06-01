@@ -1663,7 +1663,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #365eff;
+  background: #fff7d5;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1851,9 +1851,9 @@ pre .javascript .function {
   top: 5px;
 }
 .theme-next #ds-thread #ds-reset .ds-post-button {
-  top: 4px;
-  right: 5px;
-  width: 90px;
+  top: 5px;
+  right: 60px;
+  width: 98px;
   height: 30px;
   border: 1px solid #c5ced7;
   border-radius: 3px;

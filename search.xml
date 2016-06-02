@@ -4,6 +4,16 @@
   
     
     <entry>
+      <title><![CDATA[摆渡人]]></title>
+      <url>http://blog.zhangweiheu.cn/2016/06/02/%E6%91%86%E6%B8%A1%E4%BA%BA/</url>
+      <content type="html"><![CDATA[<h4 id="个人感想"><a href="#个人感想" class="headerlink" title="个人感想"></a>个人感想</h4><blockquote>
+<p>　　摆渡人这本书，故事不长，情节也没有什么跌宕起伏，平淡之中隐藏的是随时死亡的风险。<br>　　博主也是刚读一遍，没什么特别深的见解，感觉这本书主要还是讲了一场结局完美的爱情之旅。爱情可以改变两个人，可以让他们在前途未卜的状况下，为了对方付出自己的性命，难道说这就是“问世间情为何物？直教人生死相许”？  　　　　　　　　　　博主目前也就这点感想，欢迎大家推荐好书、好剧……</p>
+</blockquote>
+<hr>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[SSH权限]]></title>
       <url>http://blog.zhangweiheu.cn/2016/05/28/SSH%E6%9D%83%E9%99%90/</url>
       <content type="html"><![CDATA[<h4 id="ssh权限"><a href="#ssh权限" class="headerlink" title="ssh权限"></a>ssh权限</h4><p>　今天Win机器换了密钥对，所以要更新机器上的公钥，在给自己新增加的用户添加完密钥以后，Xshell登陆时发现使用新的密钥登陆不上去，提示密钥未在远程主机上注册，在google以后发现是文件夹和authorized_keys的权限问题。　</p>

@@ -4,11 +4,23 @@
   
     
     <entry>
+      <title><![CDATA[毕业设计]]></title>
+      <url>http://blog.zhangweiheu.cn/2016/06/04/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</url>
+      <content type="html"><![CDATA[<h3 id="技术平台"><a href="#技术平台" class="headerlink" title="技术平台"></a>技术平台</h3><p>　　技术平台基于J2EE平台的Spring、SpringMVC和MyBatis框架<br>　　操作系统：Windows 10<br>　　数据库系统：MySQL-5.6、MongoDB-3.2.4、Redis<br>　　集成开发工具：Intellij IDEA 15<br>　　主要语言：Java、HTML、Javascript<br>　　应用内嵌服务器：Apache Tomcat 8.0<br>　　Docker版本：1.9.1， build 78ee77d/1.9.1<br>　　Nginx版本：1.9.14 </p>
+<h3 id="项目部署结构："><a href="#项目部署结构：" class="headerlink" title="项目部署结构："></a>项目部署结构：</h3><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/application.JPG" alt="application"><br></div><br>### 项目模块划分<br><br>　　项目划分为三个主模块和一个MyBatis Generator模块:<br><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/moudles.JPG" alt="MBG"><br></div><br>　　exams-system-parent:主要是管理整个项目用到的jar，方便版本管理，同时继承父模块。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-parent.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-parent.git</a><br><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>　　exams-system-core:主要是项目的Service层及其以下，集成了项目主要的配置文件，模块参数配置文件的方式，在运行时从上下文取值。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-core.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-core.git</a><br><br>　　exams-system-webapp:主要是项目的控制层和资源，图片统一使用七牛云存储。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-webapp.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-webapp.git</a><br><br>　　MyBatis Generator模块：主要是使用MGB插件，自动生成mybatis的映射文件和基础的DAO层。Github 仓库地址：<a href="https://github.com/zhangweiheu/generator-tool.git" target="_blank" rel="external">https://github.com/zhangweiheu/generator-tool.git</a><br><br>### 项目配置<br>　　项目使用多环境配置文件，启用不同的配置文件，只需要修改application.properties里面的文件名就好，对应下面的两个不同的配置文件。<br><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/profile.JPG" alt="properties"><br></div>
+
+<h3 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h3><p>　　项目使用Jenkins打包部署到Docker里面，使用的是原始的方式，通过SSH的方式自动完成war文件上传，并执行start.sh脚本。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep exams-system-webapp|awk <span class="string">'&#123;print $2&#125;'</span>|xargs <span class="built_in">kill</span> -9</span><br><span class="line">mv ~/war/exams-system-webapp.war ~/bak/exams-system-webapp_`date +%Y%m%d%H%M%S`.war &amp;&amp; <span class="built_in">cd</span> </span><br><span class="line">mv ~/war/webapp-*.out ~/bak/webapp_`date +%Y%m%d%H%M%S`.out &amp;&amp; <span class="built_in">cd</span> </span><br><span class="line">mv ~/war/exams-system-webapp-*.war ~/war/exams-system-webapp.war &amp;&amp; <span class="built_in">cd</span> </span><br><span class="line">nohup java -jar ~/war/exams-system-webapp.war &gt; ~/war/webapp.out &amp;</span><br></pre></td></tr></table></figure></p>
+<h3 id="项目待改进地方"><a href="#项目待改进地方" class="headerlink" title="项目待改进地方"></a>项目待改进地方</h3><p>1、 Nginx负载均衡时是根据ip-hash的方式,用来解决生成验证码的session验证，可以完善成单独的passport模块，负责Cookie的生成与回收。</p>
+<p><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/nginx.JPG" alt="Nginx"><br></div><br>2、 可以加入一些算法，生成试卷的遗传算法。<br>3、 项目没有实现在Linux环境中测试编程题，只是实现在Windows下的实现，而且局限性也比较大。</p>
+<p>　　总之，本项目适合作为新手来学习，不足之处欢迎指正。</p>
+<hr>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[摆渡人]]></title>
       <url>http://blog.zhangweiheu.cn/2016/06/02/%E6%91%86%E6%B8%A1%E4%BA%BA/</url>
-      <content type="html"><![CDATA[<h4 id="个人感想"><a href="#个人感想" class="headerlink" title="个人感想"></a>个人感想</h4><blockquote>
-<p>　　摆渡人这本书，故事不长，情节也没有什么跌宕起伏，平淡之中隐藏的是随时死亡的风险。<br>　　博主也是刚读一遍，没什么特别深的见解，感觉这本书主要还是讲了一场结局完美的爱情之旅。爱情可以改变两个人，可以让他们在前途未卜的状况下，为了对方付出自己的性命，难道说这就是“问世间情为何物？直教人生死相许”？  　　　　　　　　　　博主目前也就这点感想，欢迎大家推荐好书、好剧……</p>
-</blockquote>
+      <content type="html"><![CDATA[<h4 id="个人感想"><a href="#个人感想" class="headerlink" title="个人感想"></a>个人感想</h4><p> 　　摆渡人这本书，故事不长，情节也没有什么跌宕起伏，平淡之中隐藏的是随时死亡的风险。<br>　　博主也是刚读一遍，没什么特别深的见解，感觉这本书主要还是讲了一场结局完美的爱情之旅。爱情可以改变两个人，可以让他们在前途未卜的状况下，为了对方付出自己的性命，难道说这就是“问世间情为何物？直教人生死相许”？<br>　　博主目前也就这点感想，欢迎大家推荐好书、好剧……</p>
 <hr>
 ]]></content>
     </entry>
@@ -452,8 +464,8 @@ wait      Block until a container stops, then print its exit code
     </entry>
     
     <entry>
-      <title><![CDATA[Java五大原则]]></title>
-      <url>http://blog.zhangweiheu.cn/2015/10/13/Java%E4%BA%94%E5%A4%A7%E5%8E%9F%E5%88%99/</url>
+      <title><![CDATA[设计模式之禅]]></title>
+      <url>http://blog.zhangweiheu.cn/2015/10/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85/</url>
       <content type="html"><![CDATA[<p>本篇文章是对秦小波编写的<a href="http://baike.baidu.com/view/3308505.htm" target="_blank" rel="external">《设计模式之禅》(第二版)</a>的部分内容的学习总结，如有不足之处欢迎指正。</p>
 <h3 id="单一职责原则-Single-Responsibility-Principle"><a href="#单一职责原则-Single-Responsibility-Principle" class="headerlink" title="单一职责原则(Single Responsibility Principle)"></a>单一职责原则(Single Responsibility Principle)</h3><h4 id="概念解释："><a href="#概念解释：" class="headerlink" title="概念解释："></a>概念解释：</h4><p>  一个类或者接口最多只有一个原因引起变化.<br>  单一职责提出了一个编写程序的标准，用“职责”或者“变化原因”来衡量接口或者类设计的是否优良，但是“职责”和“变化原因”都是不可衡量的,因项目而异，因环境而异.  </p>
 <h4 id="优点"><a href="#优点" class="headerlink" title="优点:"></a>优点:</h4><ol>

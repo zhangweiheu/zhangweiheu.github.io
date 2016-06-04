@@ -1663,7 +1663,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f70db5;
+  background: #ffa332;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1789,6 +1789,15 @@ pre .javascript .function {
 }
 .powered-by,
 .theme-info {
+  display: inline-block;
+  margin-right: 10px;
+}
+.powered-by::after,
+.theme-info::after {
+  content: "|";
+  padding-left: 10px;
+}
+.photo-info {
   display: inline-block;
 }
 .powered-by {

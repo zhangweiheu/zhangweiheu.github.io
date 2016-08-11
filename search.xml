@@ -64,7 +64,7 @@
       <title><![CDATA[MongoDB备份与恢复命令]]></title>
       <url>http://blog.zhangweiheu.cn/2016/05/05/MongoDB%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>先到mongodb/bin/目录下</p>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>./mongodump –db xxx(数据库名称)  –out /xxx/(备份路径)<br>默认路径在当前路径下：dump/xxx   </p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>./mongodump –db xxx(数据库名称)  –o /xxx/(备份路径)<br>默认路径在当前路径下：dump/xxx   </p>
 <h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><p>./mongorestore –db xxx(数据库名称) ./xxx(数据库备份路径)</p>
 <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><hr>
 ]]></content>

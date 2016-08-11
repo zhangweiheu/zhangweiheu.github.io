@@ -50,7 +50,7 @@
     <link href="http://blog.zhangweiheu.cn/2016/06/02/%E6%91%86%E6%B8%A1%E4%BA%BA/"/>
     <id>http://blog.zhangweiheu.cn/2016/06/02/摆渡人/</id>
     <published>2016-06-02T05:57:49.000Z</published>
-    <updated>2016-06-04T05:59:30.502Z</updated>
+    <updated>2016-06-06T12:58:08.085Z</updated>
     
     <content type="html">&lt;h4 id=&quot;个人感想&quot;&gt;&lt;a href=&quot;#个人感想&quot; class=&quot;headerlink&quot; title=&quot;个人感想&quot;&gt;&lt;/a&gt;个人感想&lt;/h4&gt;&lt;p&gt; 　　摆渡人这本书，故事不长，情节也没有什么跌宕起伏，平淡之中隐藏的是随时死亡的风险。&lt;br&gt;　　博主也是刚读一遍，没什么特别深的见解，感觉这本书主要还是讲了一场结局完美的爱情之旅。爱情可以改变两个人，可以让他们在前途未卜的状况下，为了对方付出自己的性命，难道说这就是“问世间情为何物？直教人生死相许”？&lt;br&gt;　　博主目前也就这点感想，欢迎大家推荐好书、好剧……&lt;/p&gt;
 &lt;hr&gt;
@@ -62,7 +62,7 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="http://blog.zhangweiheu.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="文学与远方" scheme="http://blog.zhangweiheu.cn/categories/%E6%96%87%E5%AD%A6%E4%B8%8E%E8%BF%9C%E6%96%B9/"/>
     
     
       <category term="文学" scheme="http://blog.zhangweiheu.cn/tags/%E6%96%87%E5%AD%A6/"/>
@@ -98,7 +98,7 @@
     <link href="http://blog.zhangweiheu.cn/2016/05/28/%E5%B2%9B%E4%B8%8A%E4%B9%A6%E5%BA%97/"/>
     <id>http://blog.zhangweiheu.cn/2016/05/28/岛上书店/</id>
     <published>2016-05-28T08:50:38.000Z</published>
-    <updated>2016-05-30T13:50:54.378Z</updated>
+    <updated>2016-06-06T12:58:17.358Z</updated>
     
     <content type="html">&lt;h4 id=&quot;个人对文中细节的理解&quot;&gt;&lt;a href=&quot;#个人对文中细节的理解&quot; class=&quot;headerlink&quot; title=&quot;个人对文中细节的理解&quot;&gt;&lt;/a&gt;个人对文中细节的理解&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;A.J是一个黑人，这点文中写的很少，大概也就两句话，从这点看出，美国社会对黑人还是很歧视的，在妮可死后，书店的销售额少了很多，而且大家对待A.J的态度也符合当时白人对一个黑人鳏夫的态度。&lt;/p&gt;
@@ -121,7 +121,7 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="http://blog.zhangweiheu.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="文学与远方" scheme="http://blog.zhangweiheu.cn/categories/%E6%96%87%E5%AD%A6%E4%B8%8E%E8%BF%9C%E6%96%B9/"/>
     
     
       <category term="文学" scheme="http://blog.zhangweiheu.cn/tags/%E6%96%87%E5%AD%A6/"/>
@@ -159,10 +159,10 @@
     <link href="http://blog.zhangweiheu.cn/2016/05/05/MongoDB%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4/"/>
     <id>http://blog.zhangweiheu.cn/2016/05/05/MongoDB备份与恢复命令/</id>
     <published>2016-05-05T12:19:45.000Z</published>
-    <updated>2016-05-05T13:42:18.542Z</updated>
+    <updated>2016-07-19T05:43:13.494Z</updated>
     
     <content type="html">&lt;p&gt;先到mongodb/bin/目录下&lt;/p&gt;
-&lt;h3 id=&quot;备份&quot;&gt;&lt;a href=&quot;#备份&quot; class=&quot;headerlink&quot; title=&quot;备份&quot;&gt;&lt;/a&gt;备份&lt;/h3&gt;&lt;p&gt;./mongodump –db xxx(数据库名称)  –out /xxx/(备份路径)&lt;br&gt;默认路径在当前路径下：dump/xxx   &lt;/p&gt;
+&lt;h3 id=&quot;备份&quot;&gt;&lt;a href=&quot;#备份&quot; class=&quot;headerlink&quot; title=&quot;备份&quot;&gt;&lt;/a&gt;备份&lt;/h3&gt;&lt;p&gt;./mongodump –db xxx(数据库名称)  –o /xxx/(备份路径)&lt;br&gt;默认路径在当前路径下：dump/xxx   &lt;/p&gt;
 &lt;h3 id=&quot;恢复&quot;&gt;&lt;a href=&quot;#恢复&quot; class=&quot;headerlink&quot; title=&quot;恢复&quot;&gt;&lt;/a&gt;恢复&lt;/h3&gt;&lt;p&gt;./mongorestore –db xxx(数据库名称) ./xxx(数据库备份路径)&lt;/p&gt;
 &lt;h3 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h3&gt;&lt;hr&gt;
 </content>
@@ -511,11 +511,11 @@ wait      Block until a container stops, then print its exit code
       <category term="实习总结" scheme="http://blog.zhangweiheu.cn/categories/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
     
     
+      <category term="待更新" scheme="http://blog.zhangweiheu.cn/tags/%E5%BE%85%E6%9B%B4%E6%96%B0/"/>
+    
       <category term="实习" scheme="http://blog.zhangweiheu.cn/tags/%E5%AE%9E%E4%B9%A0/"/>
     
       <category term="代码规范" scheme="http://blog.zhangweiheu.cn/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
-    
-      <category term="待更新" scheme="http://blog.zhangweiheu.cn/tags/%E5%BE%85%E6%9B%B4%E6%96%B0/"/>
     
   </entry>
   
@@ -780,7 +780,7 @@ wait      Block until a container stops, then print its exit code
     <link href="http://blog.zhangweiheu.cn/2015/10/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85/"/>
     <id>http://blog.zhangweiheu.cn/2015/10/13/设计模式之禅/</id>
     <published>2015-10-13T11:57:28.000Z</published>
-    <updated>2016-06-04T08:06:31.096Z</updated>
+    <updated>2016-06-06T13:00:59.653Z</updated>
     
     <content type="html">&lt;p&gt;本篇文章是对秦小波编写的&lt;a href=&quot;http://baike.baidu.com/view/3308505.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《设计模式之禅》(第二版)&lt;/a&gt;的部分内容的学习总结，如有不足之处欢迎指正。&lt;/p&gt;
 &lt;h3 id=&quot;单一职责原则-Single-Responsibility-Principle&quot;&gt;&lt;a href=&quot;#单一职责原则-Single-Responsibility-Principle&quot; class=&quot;headerlink&quot; title=&quot;单一职责原则(Single Responsibility Principle)&quot;&gt;&lt;/a&gt;单一职责原则(Single Responsibility Principle)&lt;/h3&gt;&lt;h4 id=&quot;概念解释：&quot;&gt;&lt;a href=&quot;#概念解释：&quot; class=&quot;headerlink&quot; title=&quot;概念解释：&quot;&gt;&lt;/a&gt;概念解释：&lt;/h4&gt;&lt;p&gt;  一个类或者接口最多只有一个原因引起变化.&lt;br&gt;  单一职责提出了一个编写程序的标准，用“职责”或者“变化原因”来衡量接口或者类设计的是否优良，但是“职责”和“变化原因”都是不可衡量的,因项目而异，因环境而异.  &lt;/p&gt;
@@ -844,10 +844,10 @@ wait      Block until a container stops, then print its exit code
     
     </summary>
     
-      <category term="读书笔记" scheme="http://blog.zhangweiheu.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="IT笔记" scheme="http://blog.zhangweiheu.cn/categories/IT%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Java" scheme="http://blog.zhangweiheu.cn/tags/Java/"/>
+      <category term="基础" scheme="http://blog.zhangweiheu.cn/tags/%E5%9F%BA%E7%A1%80/"/>
     
       <category term="设计模式" scheme="http://blog.zhangweiheu.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     

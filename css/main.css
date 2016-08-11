@@ -1663,7 +1663,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #deb830;
+  background: #ff2279;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1774,7 +1774,7 @@ pre .javascript .function {
   color: #87daff;
 }
 .footer {
-  font-size: 14px;
+  font-size: 15px;
   color: #999;
 }
 .footer img {
@@ -1790,15 +1790,6 @@ pre .javascript .function {
 .powered-by,
 .theme-info {
   display: inline-block;
-  margin-right: 10px;
-}
-.powered-by::after,
-.theme-info::after {
-  content: "|";
-  padding-left: 10px;
-}
-.photo-info {
-  display: inline-block;
 }
 .powered-by {
   margin-right: 10px;
@@ -1812,11 +1803,11 @@ pre .javascript .function {
   text-align: center;
 }
 .cc-license .cc-opacity {
-  opacity: 0.7;
+  opacity: 0.9;
   border-bottom: none;
 }
 .cc-license .cc-opacity:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
 .cc-license img {
   display: inline-block;
@@ -1860,9 +1851,9 @@ pre .javascript .function {
   top: 5px;
 }
 .theme-next #ds-thread #ds-reset .ds-post-button {
-  top: 5px;
-  right: 60px;
-  width: 98px;
+  top: 4px;
+  right: 5px;
+  width: 90px;
   height: 30px;
   border: 1px solid #c5ced7;
   border-radius: 3px;

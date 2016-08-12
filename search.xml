@@ -7,9 +7,9 @@
       <title><![CDATA[毕业设计]]></title>
       <url>http://blog.zhangweiheu.cn/2016/06/04/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</url>
       <content type="html"><![CDATA[<h3 id="技术平台"><a href="#技术平台" class="headerlink" title="技术平台"></a>技术平台</h3><p>　　技术平台基于J2EE平台的Spring、SpringMVC和MyBatis框架<br>　　操作系统：Windows 10<br>　　数据库系统：MySQL-5.6、MongoDB-3.2.4、Redis<br>　　集成开发工具：Intellij IDEA 15<br>　　主要语言：Java、HTML、Javascript<br>　　应用内嵌服务器：Apache Tomcat 8.0<br>　　Docker版本：1.9.1， build 78ee77d/1.9.1<br>　　Nginx版本：1.9.14 </p>
-<h3 id="项目部署结构："><a href="#项目部署结构：" class="headerlink" title="项目部署结构："></a>项目部署结构：</h3><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/application.JPG" alt="application"><br></div><br>### 项目模块划分<br><br>　　项目划分为三个主模块和一个MyBatis Generator模块:<br><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/moudles.JPG" alt="MBG"><br></div><br>　　exams-system-parent:主要是管理整个项目用到的jar，方便版本管理，同时继承父模块。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-parent.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-parent.git</a><br><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>　　exams-system-core:主要是项目的Service层及其以下，集成了项目主要的配置文件，模块参数配置文件的方式，在运行时从上下文取值。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-core.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-core.git</a><br><br>　　exams-system-webapp:主要是项目的控制层和资源，图片统一使用七牛云存储。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-webapp.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-webapp.git</a><br><br>　　MyBatis Generator模块：主要是使用MGB插件，自动生成mybatis的映射文件和基础的DAO层。Github 仓库地址：<a href="https://github.com/zhangweiheu/generator-tool.git" target="_blank" rel="external">https://github.com/zhangweiheu/generator-tool.git</a><br><br>### 项目配置<br>　　项目使用多环境配置文件，启用不同的配置文件，只需要修改application.properties里面的文件名就好，对应下面的两个不同的配置文件。<br><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/profile.JPG" alt="properties"><br></div>
+<h3 id="项目部署结构："><a href="#项目部署结构：" class="headerlink" title="项目部署结构："></a>项目部署结构：</h3><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/application.JPG" alt="application"><br></div><br>### 项目模块划分<br><br>　　项目划分为三个主模块和一个MyBatis Generator模块:<br><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/moudles.JPG" alt="MBG"><br></div><br>　　exams-system-parent:主要是管理整个项目用到的jar，方便版本管理，同时继承父模块。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-parent.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-parent.git</a><br><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div></pre></td></tr></table></figure><br><br>　　exams-system-core:主要是项目的Service层及其以下，集成了项目主要的配置文件，模块参数配置文件的方式，在运行时从上下文取值。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-core.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-core.git</a><br><br>　　exams-system-webapp:主要是项目的控制层和资源，图片统一使用七牛云存储。Github 仓库地址：<a href="https://github.com/zhangweiheu/exams-system-webapp.git" target="_blank" rel="external">https://github.com/zhangweiheu/exams-system-webapp.git</a><br><br>　　MyBatis Generator模块：主要是使用MGB插件，自动生成mybatis的映射文件和基础的DAO层。Github 仓库地址：<a href="https://github.com/zhangweiheu/generator-tool.git" target="_blank" rel="external">https://github.com/zhangweiheu/generator-tool.git</a><br><br>### 项目配置<br>　　项目使用多环境配置文件，启用不同的配置文件，只需要修改application.properties里面的文件名就好，对应下面的两个不同的配置文件。<br><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/profile.JPG" alt="properties"><br></div>
 
-<h3 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h3><p>　　项目使用Jenkins打包部署到Docker里面，使用的是原始的方式，通过SSH的方式自动完成war文件上传，并执行start.sh脚本。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep exams-system-webapp|awk <span class="string">'&#123;print $2&#125;'</span>|xargs <span class="built_in">kill</span> -9</span><br><span class="line">mv ~/war/exams-system-webapp.war ~/bak/exams-system-webapp_`date +%Y%m%d%H%M%S`.war &amp;&amp; <span class="built_in">cd</span> </span><br><span class="line">mv ~/war/webapp-*.out ~/bak/webapp_`date +%Y%m%d%H%M%S`.out &amp;&amp; <span class="built_in">cd</span> </span><br><span class="line">mv ~/war/exams-system-webapp-*.war ~/war/exams-system-webapp.war &amp;&amp; <span class="built_in">cd</span> </span><br><span class="line">nohup java -jar ~/war/exams-system-webapp.war &gt; ~/war/webapp.out &amp;</span><br></pre></td></tr></table></figure></p>
+<h3 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h3><p>　　项目使用Jenkins打包部署到Docker里面，使用的是原始的方式，通过SSH的方式自动完成war文件上传，并执行start.sh脚本。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ps -ef|grep exams-system-webapp|awk <span class="string">'&#123;print $2&#125;'</span>|xargs <span class="built_in">kill</span> -9</div><div class="line">mv ~/war/exams-system-webapp.war ~/bak/exams-system-webapp_`date +%Y%m%d%H%M%S`.war &amp;&amp; <span class="built_in">cd</span> </div><div class="line">mv ~/war/webapp-*.out ~/bak/webapp_`date +%Y%m%d%H%M%S`.out &amp;&amp; <span class="built_in">cd</span> </div><div class="line">mv ~/war/exams-system-webapp-*.war ~/war/exams-system-webapp.war &amp;&amp; <span class="built_in">cd</span> </div><div class="line">nohup java -jar ~/war/exams-system-webapp.war &gt; ~/war/webapp.out &amp;</div></pre></td></tr></table></figure></p>
 <h3 id="项目待改进地方"><a href="#项目待改进地方" class="headerlink" title="项目待改进地方"></a>项目待改进地方</h3><p>1、 Nginx负载均衡时是根据ip-hash的方式,用来解决生成验证码的session验证，可以完善成单独的passport模块，负责Cookie的生成与回收。</p>
 <p><div align="center"><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/nginx.JPG" alt="Nginx"><br></div><br>2、 可以加入一些算法，生成试卷的遗传算法。<br>3、 项目没有实现在Linux环境中测试编程题，只是实现在Windows下的实现，而且局限性也比较大。</p>
 <p>　　总之，本项目适合作为新手来学习，不足之处欢迎指正。</p>
@@ -27,7 +27,7 @@
     
     <entry>
       <title><![CDATA[SSH权限]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/05/28/SSH%E6%9D%83%E9%99%90/</url>
+      <url>http://blog.zhangweiheu.cn/2016/05/28/ssh%E6%9D%83%E9%99%90/</url>
       <content type="html"><![CDATA[<h4 id="ssh权限"><a href="#ssh权限" class="headerlink" title="ssh权限"></a>ssh权限</h4><p>　今天Win机器换了密钥对，所以要更新机器上的公钥，在给自己新增加的用户添加完密钥以后，Xshell登陆时发现使用新的密钥登陆不上去，提示密钥未在远程主机上注册，在google以后发现是文件夹和authorized_keys的权限问题。　</p>
 <hr>
 ]]></content>
@@ -55,7 +55,7 @@
     <entry>
       <title><![CDATA[Docker修改系统时区]]></title>
       <url>http://blog.zhangweiheu.cn/2016/05/08/Docker%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%8C%BA/</url>
-      <content type="html"><![CDATA[<h3 id="Ubantu修改系统时区"><a href="#Ubantu修改系统时区" class="headerlink" title="Ubantu修改系统时区"></a>Ubantu修改系统时区</h3><p>直接修改/etc/timezone<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Asia/shanghai&quot; &gt; /etc/timezone</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### Centos修改系统时区  </span><br><span class="line">```shell</span><br><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure></p>
+      <content type="html"><![CDATA[<h3 id="Ubantu修改系统时区"><a href="#Ubantu修改系统时区" class="headerlink" title="Ubantu修改系统时区"></a>Ubantu修改系统时区</h3><p>直接修改/etc/timezone<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">echo &quot;Asia/shanghai&quot; &gt; /etc/timezone</div><div class="line">``` </div><div class="line"></div><div class="line">### Centos修改系统时区  </div><div class="line">```shell</div><div class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</div></pre></td></tr></table></figure></p>
 <hr>
 ]]></content>
     </entry>
@@ -64,7 +64,7 @@
       <title><![CDATA[MongoDB备份与恢复命令]]></title>
       <url>http://blog.zhangweiheu.cn/2016/05/05/MongoDB%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>先到mongodb/bin/目录下</p>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>./mongodump –db xxx(数据库名称)  –o /xxx/(备份路径)<br>默认路径在当前路径下：dump/xxx   </p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>./mongodump –db xxx(数据库名称)  –out /xxx/(备份路径)<br>默认路径在当前路径下：dump/xxx   </p>
 <h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><p>./mongorestore –db xxx(数据库名称) ./xxx(数据库备份路径)</p>
 <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><hr>
 ]]></content>
@@ -73,8 +73,8 @@
     <entry>
       <title><![CDATA[Tar命令]]></title>
       <url>http://blog.zhangweiheu.cn/2016/05/05/tar%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<h3 id="解压命令"><a href="#解压命令" class="headerlink" title="解压命令"></a>解压命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf ./xxx.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="压缩命令"><a href="#压缩命令" class="headerlink" title="压缩命令"></a>压缩命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -czvf ./xxx.tar.gz xxx</span><br></pre></td></tr></table></figure>
+      <content type="html"><![CDATA[<h3 id="解压命令"><a href="#解压命令" class="headerlink" title="解压命令"></a>解压命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf ./xxx.tar.gz</div></pre></td></tr></table></figure>
+<h3 id="压缩命令"><a href="#压缩命令" class="headerlink" title="压缩命令"></a>压缩命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -czvf ./xxx.tar.gz xxx</div></pre></td></tr></table></figure>
 <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p> Cannot open: Permission denied;<br>  没有权限</p>
 <hr>
 ]]></content>
@@ -82,7 +82,7 @@
     
     <entry>
       <title><![CDATA[Vim]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/04/29/Vim/</url>
+      <url>http://blog.zhangweiheu.cn/2016/04/29/vim/</url>
       <content type="html"><![CDATA[<h4 id="Ubantu安装软件异常"><a href="#Ubantu安装软件异常" class="headerlink" title="Ubantu安装软件异常"></a>Ubantu安装软件异常</h4><ul>
 <li>Unable to locate package vim</li>
 <li>Package ‘vim-nox’ has no installation candidate</li>
@@ -94,7 +94,7 @@
     
     <entry>
       <title><![CDATA[Jenkins插件]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/04/28/Jenkins%E6%8F%92%E4%BB%B6/</url>
+      <url>http://blog.zhangweiheu.cn/2016/04/28/jenkins%E6%8F%92%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h3 id="安装jenkins后“可选插件”列表为空"><a href="#安装jenkins后“可选插件”列表为空" class="headerlink" title="安装jenkins后“可选插件”列表为空"></a>安装jenkins后“可选插件”列表为空</h3><p>因为插件站点被qiang,解决方法：更换插件源<br>选择插件管理-&gt;高级-&gt;升级站点-&gt;更改url为：<a href="http://mirror.xmission.com/jenkins/updates/update-center.json" target="_blank" rel="external">http://mirror.xmission.com/jenkins/updates/update-center.json</a> 点击提交<br>完事</p>
 <hr>
 ]]></content>
@@ -102,7 +102,7 @@
     
     <entry>
       <title><![CDATA[Docker]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/04/27/Docker/</url>
+      <url>http://blog.zhangweiheu.cn/2016/04/27/docker/</url>
       <content type="html"><![CDATA[<h2 id="Docker学习"><a href="#Docker学习" class="headerlink" title="Docker学习"></a>Docker学习</h2><h3 id="docker安装-系统必须64位"><a href="#docker安装-系统必须64位" class="headerlink" title="docker安装(系统必须64位)"></a>docker安装(系统必须64位)</h3><ul>
 <li>centos7:yun install docker,由于docker国内官方没有站点，比较慢，所以建议使用镜像站，安装docker</li>
 </ul>
@@ -211,10 +211,10 @@ wait      Block until a container stops, then print its exit code
     
     <entry>
       <title><![CDATA[Maven本地安装jar文件]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/04/17/Maven%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85jar%E6%96%87%E4%BB%B6/</url>
-      <content type="html"><![CDATA[<h3 id="maven本地仓库安装jar包和源码"><a href="#maven本地仓库安装jar包和源码" class="headerlink" title="maven本地仓库安装jar包和源码"></a>maven本地仓库安装jar包和源码</h3><h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar</span><br></pre></td></tr></table></figure>
-<h4 id="安装source类的源码"><a href="#安装source类的源码" class="headerlink" title="安装source类的源码"></a>安装source类的源码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3-sources.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar -Dclassifier=sources</span><br></pre></td></tr></table></figure>
-<h4 id="安装javadoc类的源码"><a href="#安装javadoc类的源码" class="headerlink" title="安装javadoc类的源码"></a>安装javadoc类的源码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3-javadoc.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar -Dclassifier=javadoc</span><br></pre></td></tr></table></figure>
+      <url>http://blog.zhangweiheu.cn/2016/04/17/maven%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85jar%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<h3 id="maven本地仓库安装jar包和源码"><a href="#maven本地仓库安装jar包和源码" class="headerlink" title="maven本地仓库安装jar包和源码"></a>maven本地仓库安装jar包和源码</h3><h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar</div></pre></td></tr></table></figure>
+<h4 id="安装source类的源码"><a href="#安装source类的源码" class="headerlink" title="安装source类的源码"></a>安装source类的源码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3-sources.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar -Dclassifier=sources</div></pre></td></tr></table></figure>
+<h4 id="安装javadoc类的源码"><a href="#安装javadoc类的源码" class="headerlink" title="安装javadoc类的源码"></a>安装javadoc类的源码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3-javadoc.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar -Dclassifier=javadoc</div></pre></td></tr></table></figure>
 <hr>
 ]]></content>
     </entry>

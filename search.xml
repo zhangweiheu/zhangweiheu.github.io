@@ -39,8 +39,13 @@
     
     <entry>
       <title><![CDATA[SSH权限]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/05/28/ssh%E6%9D%83%E9%99%90/</url>
-      <content type="html"><![CDATA[<h4 id="ssh权限"><a href="#ssh权限" class="headerlink" title="ssh权限"></a>ssh权限</h4><p>　今天Win机器换了密钥对，所以要更新机器上的公钥，在给自己新增加的用户添加完密钥以后，Xshell登陆时发现使用新的密钥登陆不上去，提示密钥未在远程主机上注册，在google以后发现是文件夹和authorized_keys的权限问题。　</p>
+      <url>http://blog.zhangweiheu.cn/2016/05/28/SSH%E6%9D%83%E9%99%90/</url>
+      <content type="html"><![CDATA[<h4 id="ssh权限"><a href="#ssh权限" class="headerlink" title="ssh权限"></a>ssh权限</h4><p>　今天Win机器换了密钥对，所以要更新机器上的公钥，在给自己新增加的用户添加完密钥以后，Xshell登陆时发现使用新的密钥登陆不上去，提示密钥未在远程主机上注册，在google以后发现是文件夹和authorized_keys的权限问题。</p>
+<h4 id="常用的几个SSH方面的命令"><a href="#常用的几个SSH方面的命令" class="headerlink" title="常用的几个SSH方面的命令"></a>常用的几个SSH方面的命令</h4><p>1、ssh-keygen<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure></p>
+<p>生成RSA加密协议的公私钥对，非对称加密；一般在用户目录的.ssh目录下（即：~/.ssh），其中id_rsa是密钥对的私钥，id_rsa.pub是密钥对的公钥，一般公钥是公开的。<br>2、cat<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</div></pre></td></tr></table></figure></p>
+<p>这是将公钥放入用户目录的认证文件，SSH登录的时候，认证协议会先去找  ~/.ssh/authorized_keys 这个文件，看看是否认证通过。<br>一般来说新生成的authorized_keys和.ssh目录的权限都比较高，所以需要放开相关访问权限，也就用到下面的命令，否则会认证失败。<br>3、chmod<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 600 authorized_keys</div></pre></td></tr></table></figure></p>
+<p>设置authorized_keys文件的访问权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 700 -R .ssh</div></pre></td></tr></table></figure></p>
+<p>设置.ssh目录访问权限<br>600/700是简写的110000000/111000000分别是用户、用户组、其他的读、写、执行权限，1代表有，0代表无</p>
 <hr>
 ]]></content>
     </entry>
@@ -76,7 +81,7 @@
       <title><![CDATA[MongoDB备份与恢复命令]]></title>
       <url>http://blog.zhangweiheu.cn/2016/05/05/MongoDB%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>先到mongodb/bin/目录下</p>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>./mongodump –db xxx(数据库名称)  –out /xxx/(备份路径)<br>默认路径在当前路径下：dump/xxx   </p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>./mongodump –db xxx(数据库名称)  –out /xxx/(备份路径)<br>默认路径在当前路径下：dump/xxx</p>
 <h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><p>./mongorestore –db xxx(数据库名称) ./xxx(数据库备份路径)</p>
 <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><hr>
 ]]></content>
@@ -84,7 +89,7 @@
     
     <entry>
       <title><![CDATA[Tar命令]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/05/05/tar%E5%91%BD%E4%BB%A4/</url>
+      <url>http://blog.zhangweiheu.cn/2016/05/05/Tar%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<h3 id="解压命令"><a href="#解压命令" class="headerlink" title="解压命令"></a>解压命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf ./xxx.tar.gz</div></pre></td></tr></table></figure>
 <h3 id="压缩命令"><a href="#压缩命令" class="headerlink" title="压缩命令"></a>压缩命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -czvf ./xxx.tar.gz xxx</div></pre></td></tr></table></figure>
 <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p> Cannot open: Permission denied;<br>  没有权限</p>
@@ -94,7 +99,7 @@
     
     <entry>
       <title><![CDATA[Vim]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/04/29/vim/</url>
+      <url>http://blog.zhangweiheu.cn/2016/04/29/Vim/</url>
       <content type="html"><![CDATA[<h4 id="Ubantu安装软件异常"><a href="#Ubantu安装软件异常" class="headerlink" title="Ubantu安装软件异常"></a>Ubantu安装软件异常</h4><ul>
 <li>Unable to locate package vim</li>
 <li>Package ‘vim-nox’ has no installation candidate</li>
@@ -106,7 +111,7 @@
     
     <entry>
       <title><![CDATA[Jenkins插件]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/04/28/jenkins%E6%8F%92%E4%BB%B6/</url>
+      <url>http://blog.zhangweiheu.cn/2016/04/28/Jenkins%E6%8F%92%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h3 id="安装jenkins后“可选插件”列表为空"><a href="#安装jenkins后“可选插件”列表为空" class="headerlink" title="安装jenkins后“可选插件”列表为空"></a>安装jenkins后“可选插件”列表为空</h3><p>因为插件站点被qiang,解决方法：更换插件源<br>选择插件管理-&gt;高级-&gt;升级站点-&gt;更改url为：<a href="http://mirror.xmission.com/jenkins/updates/update-center.json" target="_blank" rel="external">http://mirror.xmission.com/jenkins/updates/update-center.json</a> 点击提交<br>完事</p>
 <hr>
 ]]></content>
@@ -114,7 +119,7 @@
     
     <entry>
       <title><![CDATA[Docker]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/04/27/docker/</url>
+      <url>http://blog.zhangweiheu.cn/2016/04/27/Docker/</url>
       <content type="html"><![CDATA[<h2 id="Docker学习"><a href="#Docker学习" class="headerlink" title="Docker学习"></a>Docker学习</h2><h3 id="docker安装-系统必须64位"><a href="#docker安装-系统必须64位" class="headerlink" title="docker安装(系统必须64位)"></a>docker安装(系统必须64位)</h3><ul>
 <li>centos7:yun install docker,由于docker国内官方没有站点，比较慢，所以建议使用镜像站，安装docker</li>
 </ul>
@@ -188,7 +193,7 @@ wait      Block until a container stops, then print its exit code
       <title><![CDATA[Java线程状态知识点]]></title>
       <url>http://blog.zhangweiheu.cn/2016/04/18/Java%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
       <content type="html"><![CDATA[<h2 id="Thread和Runnable实现线程的异同"><a href="#Thread和Runnable实现线程的异同" class="headerlink" title="Thread和Runnable实现线程的异同"></a>Thread和Runnable实现线程的异同</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ul>
-<li>都是多线程实现的方式  </li>
+<li>都是多线程实现的方式</li>
 </ul>
 <h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ul>
 <li><p>Thread是类，而Runnable是接口；Thread是实现了Runnable接口的类。</p>
@@ -223,7 +228,7 @@ wait      Block until a container stops, then print its exit code
     
     <entry>
       <title><![CDATA[Maven本地安装jar文件]]></title>
-      <url>http://blog.zhangweiheu.cn/2016/04/17/maven%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85jar%E6%96%87%E4%BB%B6/</url>
+      <url>http://blog.zhangweiheu.cn/2016/04/17/Maven%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85jar%E6%96%87%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h3 id="maven本地仓库安装jar包和源码"><a href="#maven本地仓库安装jar包和源码" class="headerlink" title="maven本地仓库安装jar包和源码"></a>maven本地仓库安装jar包和源码</h3><h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar</div></pre></td></tr></table></figure>
 <h4 id="安装source类的源码"><a href="#安装source类的源码" class="headerlink" title="安装source类的源码"></a>安装source类的源码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3-sources.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar -Dclassifier=sources</div></pre></td></tr></table></figure>
 <h4 id="安装javadoc类的源码"><a href="#安装javadoc类的源码" class="headerlink" title="安装javadoc类的源码"></a>安装javadoc类的源码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file -Dfile=D:/spymemcached-2.10.3-javadoc.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar -Dclassifier=javadoc</div></pre></td></tr></table></figure>
@@ -244,7 +249,7 @@ wait      Block until a container stops, then print its exit code
 </li>
 <li><p>redis<br>　　redis是一种内存型数据库，相比于memcache，redis可以做到宕机不丢失数据，主要得益于他的save备份，redis对于开发者来说，可以作为缓存也可以当做数据库，无论当做什么，都摆脱不了它基于5大对象和基本数据结构的存储规则。redis基本不需要什么优化，如果说需要的话那只是在使用的层面上进行优化，什么样的数据选择什么样的对象，什么样的数据选择什么样的生存时间，什么样的数据适合使用内存，使用内存的效率是否得到提高?当用缓存的时候，命中率是否达到最大？都是在使用层面。所以实战才能出经验，不能滥用内存，毕竟内存宝贵。深入学习可以用《Redis实战》。在项目中主要是用Spring-data-redis管理，使用jedis进行池化，在代码中主要是用RedisTemplate进行操作。</p>
 </li>
-<li><p>Hibernate-Validator<br>　　validator校验器接触以后感觉真的很强大，校验字段，集合，以及参数，甚至集合中对象的字段也可以校验。对于hibernate-validator的原理，目前来看应该是使用拦截器技术，请求数据的校验发生在requestmapping之前。本身提供的基础数据类型校验也基本能够满足项目需要。  </p>
+<li><p>Hibernate-Validator<br>　　validator校验器接触以后感觉真的很强大，校验字段，集合，以及参数，甚至集合中对象的字段也可以校验。对于hibernate-validator的原理，目前来看应该是使用拦截器技术，请求数据的校验发生在requestmapping之前。本身提供的基础数据类型校验也基本能够满足项目需要。</p>
 </li>
 <li><p>properties文件配置<br>　　这一个根据向先文哥请教，理解了一些实现原理，通过这个跟体现出多问为什么的重要性，有些东西虽然我自己也有想法和认识，但是局限于自己的经验，并不会理解很深，有时候简单的做法，虽然一看就知道，但是要说出为什么这样用，好处都是什么，却是比较难的。</p>
 </li>
@@ -260,18 +265,18 @@ wait      Block until a container stops, then print its exit code
     <entry>
       <title><![CDATA[第一个小模块开发总结]]></title>
       <url>http://blog.zhangweiheu.cn/2015/11/12/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/</url>
-      <content type="html"><![CDATA[<p>　　这是在第一个小模块，开始提测的时候的总结。  </p>
+      <content type="html"><![CDATA[<p>　　这是在第一个小模块，开始提测的时候的总结。</p>
 <h3 id="代码的问题"><a href="#代码的问题" class="headerlink" title="代码的问题"></a>代码的问题</h3><ol>
 <li>全力避免嵌套循环<br>　hashmap解决；</li>
 <li>数据库字段设计必须考虑周全<br>　字段设计做到没有浪费和最大限度的复用；</li>
-<li>接口规范一定要严格要求，代码有不规范的地方立即整改，不能因为用一次就松懈<br>　　接口规范按照开发规范来，接口设计和命名都要做到自解释；<br>　　DAO层要职责唯一,尽量可以最大化复用，合理利用重载；<br>　　Service层要承前启后，封装DAO；<br>　　Controller层做到接口即注释、数据的交互、URL必须明确、POST增/DELETE删/PUT改/GET查、封装数据；  </li>
-<li>需求文档要深入解析，不可漏掉细节，必须详细记录细节性需求，合理拆分功能性接口  </li>
-<li>不会或者不确定或者有思路的接口设计，都要征求高级工程师的意见，最好是先写一份初稿  </li>
+<li>接口规范一定要严格要求，代码有不规范的地方立即整改，不能因为用一次就松懈<br>　　接口规范按照开发规范来，接口设计和命名都要做到自解释；<br>　　DAO层要职责唯一,尽量可以最大化复用，合理利用重载；<br>　　Service层要承前启后，封装DAO；<br>　　Controller层做到接口即注释、数据的交互、URL必须明确、POST增/DELETE删/PUT改/GET查、封装数据；</li>
+<li>需求文档要深入解析，不可漏掉细节，必须详细记录细节性需求，合理拆分功能性接口</li>
+<li>不会或者不确定或者有思路的接口设计，都要征求高级工程师的意见，最好是先写一份初稿</li>
 </ol>
 <h3 id="生活问题"><a href="#生活问题" class="headerlink" title="生活问题"></a>生活问题</h3><ol>
-<li>合理安排时间，多学习  </li>
-<li>住宿的地方最好选择离公司近的地方，多花钱是为了学习  </li>
-<li>不懂得问题，最好自己在心里能实现，但是不要写出来，征求高级工程师的看法，进行改造  </li>
+<li>合理安排时间，多学习</li>
+<li>住宿的地方最好选择离公司近的地方，多花钱是为了学习</li>
+<li>不懂得问题，最好自己在心里能实现，但是不要写出来，征求高级工程师的看法，进行改造</li>
 </ol>
 <p>待周六更新……</p>
 ]]></content>
@@ -281,8 +286,8 @@ wait      Block until a container stops, then print its exit code
       <title><![CDATA[实习开始]]></title>
       <url>http://blog.zhangweiheu.cn/2015/11/05/%E5%AE%9E%E4%B9%A0%E5%BC%80%E5%A7%8B/</url>
       <content type="html"><![CDATA[<p>　　谨以此文纪念实习开端.</p>
-<h4 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h4><p>　　这是一个积极的团队,大家彼此相互尊重,相互信任,相互配合,相互理解,高效的完成开发工作.每周例会实质上就是大家拿出自己的看法和意见,没有保留,这是一种非常好的氛围和状态,技术VP和我们一同参加例会,其实不知道他的身份,就能看出他的气场和能力都是非常强的.两个技术VP这两天算是都见过了,也都相互认识了. </p>
-<h4 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h4><p>　　今天也算是领到了一个任务,任务不大,但是依旧具有挑战性,因为在这么短的时间内熟悉框架和项目结构也是蛮拼的,不过我非常喜欢这种挑战.<br>　　整个Java开发组的同事都非常nice,大家都很忙,如果我有问题,他们依旧放下手中的活给我答疑解惑.对于开发人员来说这种中断是大忌,真的非常感谢大家无保留的教导.  </p>
+<h4 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h4><p>　　这是一个积极的团队,大家彼此相互尊重,相互信任,相互配合,相互理解,高效的完成开发工作.每周例会实质上就是大家拿出自己的看法和意见,没有保留,这是一种非常好的氛围和状态,技术VP和我们一同参加例会,其实不知道他的身份,就能看出他的气场和能力都是非常强的.两个技术VP这两天算是都见过了,也都相互认识了.</p>
+<h4 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h4><p>　　今天也算是领到了一个任务,任务不大,但是依旧具有挑战性,因为在这么短的时间内熟悉框架和项目结构也是蛮拼的,不过我非常喜欢这种挑战.<br>　　整个Java开发组的同事都非常nice,大家都很忙,如果我有问题,他们依旧放下手中的活给我答疑解惑.对于开发人员来说这种中断是大忌,真的非常感谢大家无保留的教导.</p>
 <h4 id="实习目标"><a href="#实习目标" class="headerlink" title="实习目标"></a>实习目标</h4><p>　　实习的主要目的无非就是双向选择,无论双方是否能达成一致,我感觉这段实习经历都是非常美好的.</p>
 ]]></content>
     </entry>
@@ -292,14 +297,14 @@ wait      Block until a container stops, then print its exit code
       <url>http://blog.zhangweiheu.cn/2015/11/02/Vim%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
       <content type="html"><![CDATA[<p>　　宇宙中最强大的编辑器之一,程序猿必备操作.</p>
 <h4 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h4><ul>
-<li>:e filename　　打开文件编辑  </li>
-<li>:w　　保存文件  </li>
-<li>:q　　退出编辑器  </li>
+<li>:e filename　　打开文件编辑</li>
+<li>:w　　保存文件</li>
+<li>:q　　退出编辑器</li>
 <li>:q!　　退出但不保存</li>
 <li>:x　　Write file (if changes has been made) and exit</li>
 <li>.　　Repeats the last change made in normal mode</li>
 <li>5.　　Repeats 5 times the last change made in normal mode</li>
-<li>:sav filename　　Saves file as filename </li>
+<li>:sav filename　　Saves file as filename</li>
 </ul>
 <h4 id="剪切、复制和粘贴"><a href="#剪切、复制和粘贴" class="headerlink" title="剪切、复制和粘贴"></a>剪切、复制和粘贴</h4><ul>
 <li>y　　Copy the selected text to clipboard</li>
@@ -408,7 +413,7 @@ wait      Block until a container stops, then print its exit code
 <li>!}fmt　　Align all lines at the current position</li>
 <li>5!!fmt　　Align the next 5 lines</li>
 </ul>
-<h4 id="Tabs-Windows"><a href="#Tabs-Windows" class="headerlink" title="Tabs/Windows　"></a>Tabs/Windows　</h4><ul>
+<h4 id="Tabs-Windows"><a href="#Tabs-Windows" class="headerlink" title="Tabs/Windows"></a>Tabs/Windows</h4><ul>
 <li>:tabnew　　Creates a new tab</li>
 <li>gt　　Show next tab</li>
 <li>:tabfirst　　Show first tab</li>
@@ -451,7 +456,7 @@ wait      Block until a container stops, then print its exit code
 <li>:set autoindent　　Turn on auto-indent</li>
 <li>:set smartindent　　Turn on intelligent auto-indent</li>
 <li>:set shiftwidth=4　　Defines 4 spaces as indent size</li>
-<li>ctrl-t, ctrl-d　　Indent/un-indent in insert mode  </li>
+<li>ctrl-t, ctrl-d　　Indent/un-indent in insert mode</li>
 <li>‘&gt;&gt;　　Indent</li>
 <li>&lt;&lt;　　Un-indent</li>
 <li>=%　　Indent the code between parenthesis</li>
@@ -479,17 +484,17 @@ wait      Block until a container stops, then print its exit code
       <title><![CDATA[设计模式之禅]]></title>
       <url>http://blog.zhangweiheu.cn/2015/10/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85/</url>
       <content type="html"><![CDATA[<p>本篇文章是对秦小波编写的<a href="http://baike.baidu.com/view/3308505.htm" target="_blank" rel="external">《设计模式之禅》(第二版)</a>的部分内容的学习总结，如有不足之处欢迎指正。</p>
-<h3 id="单一职责原则-Single-Responsibility-Principle"><a href="#单一职责原则-Single-Responsibility-Principle" class="headerlink" title="单一职责原则(Single Responsibility Principle)"></a>单一职责原则(Single Responsibility Principle)</h3><h4 id="概念解释："><a href="#概念解释：" class="headerlink" title="概念解释："></a>概念解释：</h4><p>  一个类或者接口最多只有一个原因引起变化.<br>  单一职责提出了一个编写程序的标准，用“职责”或者“变化原因”来衡量接口或者类设计的是否优良，但是“职责”和“变化原因”都是不可衡量的,因项目而异，因环境而异.  </p>
+<h3 id="单一职责原则-Single-Responsibility-Principle"><a href="#单一职责原则-Single-Responsibility-Principle" class="headerlink" title="单一职责原则(Single Responsibility Principle)"></a>单一职责原则(Single Responsibility Principle)</h3><h4 id="概念解释："><a href="#概念解释：" class="headerlink" title="概念解释："></a>概念解释：</h4><p>  一个类或者接口最多只有一个原因引起变化.<br>  单一职责提出了一个编写程序的标准，用“职责”或者“变化原因”来衡量接口或者类设计的是否优良，但是“职责”和“变化原因”都是不可衡量的,因项目而异，因环境而异.</p>
 <h4 id="优点"><a href="#优点" class="headerlink" title="优点:"></a>优点:</h4><ol>
-<li>类的复杂性降低,实现什么职责都有清晰明确的定义;   </li>
-<li>可读性提高，复杂性降低;  </li>
-<li>可维护性提高，可读性提高;   </li>
+<li>类的复杂性降低,实现什么职责都有清晰明确的定义;</li>
+<li>可读性提高，复杂性降低;</li>
+<li>可维护性提高，可读性提高;</li>
 <li>变更引起的风险降低;<br>注：接口一定要做到单一职责，类的设计尽量做到只有一个原因引起变化</li>
 </ol>
 <h3 id="里氏替换原则-Liskov-Substitution-Principle"><a href="#里氏替换原则-Liskov-Substitution-Principle" class="headerlink" title="里氏替换原则(Liskov Substitution Principle)"></a>里氏替换原则(Liskov Substitution Principle)</h3><h4 id="四层概念解释"><a href="#四层概念解释" class="headerlink" title="四层概念解释:"></a>四层概念解释:</h4><ol>
-<li>子类必须完全实现父类的方法;   </li>
-<li>子类可以有自己的个性;   </li>
-<li>覆盖或者实现父类的方法时输入参数可以被放大;<br>子类方法中的前置条件必须与超类中被覆写的方法的前置条件相同或者更宽松   </li>
+<li>子类必须完全实现父类的方法;</li>
+<li>子类可以有自己的个性;</li>
+<li>覆盖或者实现父类的方法时输入参数可以被放大;<br>子类方法中的前置条件必须与超类中被覆写的方法的前置条件相同或者更宽松</li>
 <li>覆写或者实现父类的方法时输出结果可以被缩小;<br>注:父类出现的地方子类一定可以出现，反之不一定</li>
 </ol>
 <h3 id="依赖倒置原则-Dependence-Inversion-Principle"><a href="#依赖倒置原则-Dependence-Inversion-Principle" class="headerlink" title="依赖倒置原则(Dependence Inversion Principle)"></a>依赖倒置原则(Dependence Inversion Principle)</h3><h4 id="三层概念解释"><a href="#三层概念解释" class="headerlink" title="三层概念解释:"></a>三层概念解释:</h4><ol>

@@ -89,10 +89,10 @@
 <meta name="description" content="Docker学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker">
-<meta property="og:url" content="http://blog.zhangweiheu.cn/2016/04/27/Docker/index.html">
+<meta property="og:url" content="http://blog.zhangweiheu.cn/2016/04/27/docker/index.html">
 <meta property="og:site_name" content="流云">
 <meta property="og:description" content="Docker学习">
-<meta property="og:updated_time" content="2016-08-10T14:40:10.458Z">
+<meta property="og:updated_time" content="2016-09-02T15:36:39.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker">
 <meta name="twitter:description" content="Docker学习">
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.zhangweiheu.cn/2016/04/27/Docker/"/>
+  <link rel="canonical" href="http://blog.zhangweiheu.cn/2016/04/27/docker/"/>
 
   <title> Docker | 流云 </title>
 </head>
@@ -352,8 +352,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/27/Docker/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/Docker/" itemprop="commentsCount"></span>
+                <a href="/2016/04/27/docker/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/docker/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -363,7 +363,7 @@
 
           
           
-             <span id="/2016/04/27/Docker/" class="leancloud_visitors" data-flag-title="Docker">
+             <span id="/2016/04/27/docker/" class="leancloud_visitors" data-flag-title="Docker">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,67 +393,67 @@
         <h2 id="Docker学习"><a href="#Docker学习" class="headerlink" title="Docker学习"></a>Docker学习</h2><h3 id="docker安装-系统必须64位"><a href="#docker安装-系统必须64位" class="headerlink" title="docker安装(系统必须64位)"></a>docker安装(系统必须64位)</h3><ul>
 <li>centos7:yun install docker,由于docker国内官方没有站点，比较慢，所以建议使用镜像站，安装docker</li>
 </ul>
-<h3 id="dockerfile构建新的镜像"><a href="#dockerfile构建新的镜像" class="headerlink" title="dockerfile构建新的镜像"></a>dockerfile构建新的镜像</h3><h5 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h5><p>  RUN：镜像构建时要运行的命令，不同于使用docker run启动容器；<br>  CMD：容器启动时要运行的命令，docker run中的命令会覆盖CMD中的命令；eg:CMD[“bash”,”-1”]<br>  ENTRYPOINT：类似于CMD指令，但是该指令不容易在容器启动时被覆盖，而docker run中的参数会被再次传递给ENTRYPOINT；eg：ENTRYPOINT[“nginx”,”-g”,”daemon off”]<br>  WORKDIR：<br>  ENV：<br>  USER：指定该镜像以什么身份去运行；eg:USER zhangwei:administor<br>  VOLUME：用来向基于镜像的容器添加卷<br>  ADD：复制并解压文件<br>  COPY：只是复制文件<br>  ONBUILD：为镜像添加触发器，<br>  docker 命令 ：docker exec -it containerID/NAME /bin/bash  </p>
+<h3 id="dockerfile构建新的镜像"><a href="#dockerfile构建新的镜像" class="headerlink" title="dockerfile构建新的镜像"></a>dockerfile构建新的镜像</h3><h5 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h5><p>  RUN：镜像构建时要运行的命令，不同于使用docker run启动容器；<br>  CMD：容器启动时要运行的命令，docker run中的命令会覆盖CMD中的命令；eg:CMD[“bash”,”-1”]<br>  ENTRYPOINT：类似于CMD指令，但是该指令不容易在容器启动时被覆盖，而docker run中的参数会被再次传递给ENTRYPOINT；eg：ENTRYPOINT[“nginx”,”-g”,”daemon off”]<br>  WORKDIR：<br>  ENV：<br>  USER：指定该镜像以什么身份去运行；eg:USER zhangwei:administor<br>  VOLUME：用来向基于镜像的容器添加卷<br>  ADD：复制并解压文件<br>  COPY：只是复制文件<br>  ONBUILD：为镜像添加触发器，<br>  docker 命令 ：docker exec -it containerID/NAME /bin/bash</p>
 <h3 id="Docker基本命令"><a href="#Docker基本命令" class="headerlink" title="Docker基本命令"></a>Docker基本命令</h3><p>$ sudo docker   # docker命令帮助<br>Usage: docker [OPTIONS] COMMAND [arg…]<br> -H=[unix:///var/run/docker.sock]: tcp://host:port to bind/connect to or unix://path/to/socket to use</p>
 <p>A self-sufficient runtime for linux containers.</p>
-<p>Commands:<br>    attach    Attach to a running container                 </p>
-<pre><code>          # 当前shell下attach连接指定运行镜像  
-build     Build an image from a Dockerfile              
+<p>Commands:<br>    attach    Attach to a running container</p>
+<pre><code>          # 当前shell下attach连接指定运行镜像
+build     Build an image from a Dockerfile
           # 通过Dockerfile定制镜像
-commit    Create a new image from a container&apos;s changes 
+commit    Create a new image from a container&apos;s changes
           # 提交当前容器为新的镜像
-cp        Copy files/folders from the containers filesystem to the host path  
-          # 从容器中拷贝指定文件或者目录到宿主机中  
-diff      Inspect changes on a container&apos;s filesystem   
-          # 查看docker容器变化  
-events    Get real time events from the server          
+cp        Copy files/folders from the containers filesystem to the host path
+          # 从容器中拷贝指定文件或者目录到宿主机中
+diff      Inspect changes on a container&apos;s filesystem
+          # 查看docker容器变化
+events    Get real time events from the server
           # 从docker服务获取容器实时事件
-export    Stream the contents of a container as a tar archive     
-          # 导出容器的内容流作为一个tar归档文件[对应import]  
-history   Show the history of an image    
-          # 展示一个镜像形成历史  
-images    List images    # 列出系统当前镜像  
-import    Create a new filesystem image from the contents of a tarball    
-          # 从tar包中的内容创建一个新的文件系统映像[对应export]  
-info      Display system-wide information   # 显示系统相关信息    
-inspect   Return low-level information on a container    
-          # 查看容器详细信息  
-kill      Kill a running container                        
-          # kill指定docker容器  
-load    Load an image from a tar archive               
-       # 从一个tar包中加载一个镜像[对应save]   login     Register or Login to the docker registry server   
-          # 注册或者登陆一个docker源服务器  
-logs      Fetch the logs of a container  
+export    Stream the contents of a container as a tar archive
+          # 导出容器的内容流作为一个tar归档文件[对应import]
+history   Show the history of an image
+          # 展示一个镜像形成历史
+images    List images    # 列出系统当前镜像
+import    Create a new filesystem image from the contents of a tarball
+          # 从tar包中的内容创建一个新的文件系统映像[对应export]
+info      Display system-wide information   # 显示系统相关信息
+inspect   Return low-level information on a container
+          # 查看容器详细信息
+kill      Kill a running container
+          # kill指定docker容器
+load    Load an image from a tar archive
+       # 从一个tar包中加载一个镜像[对应save]   login     Register or Login to the docker registry server
+          # 注册或者登陆一个docker源服务器
+logs      Fetch the logs of a container
           # 输出当前容器日志信息
-port      Lookup the public-facing port which is NAT-ed to PRIVATE_PORT  
-          # 查看映射端口对应的容器内部源端口  
-pause     Pause all processes within a container          
-          # 暂停容器  
-ps        List containers                               
-          # 列出容器列表  
-pull      Pull an image or a repository from the docker registry server  
-          # 从docker镜像源服务器拉取指定镜像或者库镜像  
-push      Push an image or a repository to the docker registry server  
-          # 推送指定镜像或者库镜像至docker源服务器  
-restart   Restart a running container                   
-          # 重启运行的容器    
-rm        Remove one or more containers                   
-          # 移除一个或者多个容器    
-rmi       Remove one or more images                 
-          # 移除一个或多个镜像[无容器使用该镜像才可删除，否则需删除相关容器才可继续或-f强制删除]    
+port      Lookup the public-facing port which is NAT-ed to PRIVATE_PORT
+          # 查看映射端口对应的容器内部源端口
+pause     Pause all processes within a container
+          # 暂停容器
+ps        List containers
+          # 列出容器列表
+pull      Pull an image or a repository from the docker registry server
+          # 从docker镜像源服务器拉取指定镜像或者库镜像
+push      Push an image or a repository to the docker registry server
+          # 推送指定镜像或者库镜像至docker源服务器
+restart   Restart a running container
+          # 重启运行的容器
+rm        Remove one or more containers
+          # 移除一个或者多个容器
+rmi       Remove one or more images
+          # 移除一个或多个镜像[无容器使用该镜像才可删除，否则需删除相关容器才可继续或-f强制删除]
 run       Run a command in a new container
-          # 在一个新的容器中运行一个命令    
-save      Save an image to a tar archive  
-          # 保存一个镜像为一个tar包[对应load]  
-search    Search for an image in the docker index       
-          # 在docker index中搜索镜像  
+          # 在一个新的容器中运行一个命令
+save      Save an image to a tar archive
+          # 保存一个镜像为一个tar包[对应load]
+search    Search for an image in the docker index
+          # 在docker index中搜索镜像
 start     Start a stopped containers                    # 启动容器
 stop      Stop a running containers                     # 停止容器
 tag       Tag an image into a repository                # 给源中镜像打标签
 top       Lookup the running processes of a container   # 查看容器中运行的进程信息
 unpause   Unpause a paused container                    # 取消暂停容器
 version   Show the docker version information           # 查看docker版本号
-wait      Block until a container stops, then print its exit code   
+wait      Block until a container stops, then print its exit code
           # 截取容器停止时的退出状态值
 </code></pre><hr>
 
@@ -518,7 +518,7 @@ wait      Block until a container stops, then print its exit code
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/28/Jenkins插件/" rel="prev" title="Jenkins插件">
+              <a href="/2016/04/28/jenkins插件/" rel="prev" title="Jenkins插件">
                 Jenkins插件 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -546,8 +546,8 @@ wait      Block until a container stops, then print its exit code
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/27/Docker/"
-           data-title="Docker" data-url="http://blog.zhangweiheu.cn/2016/04/27/Docker/">
+      <div class="ds-thread" data-thread-key="2016/04/27/docker/"
+           data-title="Docker" data-url="http://blog.zhangweiheu.cn/2016/04/27/docker/">
       </div>
     
   </div>
@@ -592,7 +592,7 @@ wait      Block until a container stops, then print its exit code
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -600,7 +600,7 @@ wait      Block until a container stops, then print its exit code
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -609,7 +609,7 @@ wait      Block until a container stops, then print its exit code
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

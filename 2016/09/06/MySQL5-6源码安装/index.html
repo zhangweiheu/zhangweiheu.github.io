@@ -1,0 +1,1129 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MySQL源码安装," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="流云" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在最小化安装的CentOS7系统上编译安装MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL5.6源码安装">
+<meta property="og:url" content="http://blog.zhangweiheu.cn/2016/09/06/MySQL5-6源码安装/index.html">
+<meta property="og:site_name" content="流云">
+<meta property="og:description" content="在最小化安装的CentOS7系统上编译安装MySQL">
+<meta property="og:image" content="http://7xo04n.com1.z0.glb.clouddn.com/network_dhcp.JPG">
+<meta property="og:updated_time" content="2016-09-12T00:37:21.889Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL5.6源码安装">
+<meta name="twitter:description" content="在最小化安装的CentOS7系统上编译安装MySQL">
+<meta name="twitter:image" content="http://7xo04n.com1.z0.glb.clouddn.com/network_dhcp.JPG">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.zhangweiheu.cn/2016/09/06/MySQL5-6源码安装/"/>
+
+  <title> MySQL5.6源码安装 | 流云 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-77667812-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">流云</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不忘初心，方得始终</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/message" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MySQL5.6源码安装
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-06T07:57:41+08:00" content="2016-09-06">
+              2016-09-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/06/MySQL5-6源码安装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/MySQL5-6源码安装/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/06/MySQL5-6源码安装/" class="leancloud_visitors" data-flag-title="MySQL5.6源码安装">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="CentOS7开启网络"><a href="#CentOS7开启网络" class="headerlink" title="CentOS7开启网络"></a>CentOS7开启网络</h3><p>使用vi或者vim编辑器打开网络配置模块的配置文件：/etc/sysconfig/network-scripts/ifcfg-enp*** 配置如下图：</p>
+<center><br><img src="http://7xo04n.com1.z0.glb.clouddn.com/network_dhcp.JPG" alt=""><br></center>
+
+<p>将BOOTPROTO设置为动态的，即：BOOTPROTO=dhcp<br>将ONBOOT设置为yes即：ONBOOT=yes<br>保存退出：wq<br>重启网络命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service network restart</div></pre></td></tr></table></figure></p>
+<p>或者重启linux系统<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboot</div></pre></td></tr></table></figure></p>
+<p>查看网络<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ip addr</div></pre></td></tr></table></figure></p>
+<h3 id="1、下载源码"><a href="#1、下载源码" class="headerlink" title="1、下载源码"></a>1、下载源码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.23.tar.gz</div></pre></td></tr></table></figure>
+<h3 id="2、解压"><a href="#2、解压" class="headerlink" title="2、解压"></a>2、解压</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar zxvf mysql-5.6.23.tar.gz</div></pre></td></tr></table></figure>
+<h3 id="3、安装必要的包"><a href="#3、安装必要的包" class="headerlink" title="3、安装必要的包"></a>3、安装必要的包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install cmake gcc-c++ ncurses-devel perl-Data-Dumper</div></pre></td></tr></table></figure>
+<h3 id="4、进入mysql源码目录，生成makefil"><a href="#4、进入mysql源码目录，生成makefil" class="headerlink" title="4、进入mysql源码目录，生成makefil"></a>4、进入mysql源码目录，生成makefil</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cmake .</div></pre></td></tr></table></figure>
+<h3 id="5、编译"><a href="#5、编译" class="headerlink" title="5、编译"></a>5、编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make</div></pre></td></tr></table></figure>
+<h3 id="6、安装"><a href="#6、安装" class="headerlink" title="6、安装"></a>6、安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<p>mysql将会安装到/usr/local/mysql路径。</p>
+<h3 id="7、添加mysql用户和组"><a href="#7、添加mysql用户和组" class="headerlink" title="7、添加mysql用户和组"></a>7、添加mysql用户和组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo groupadd mysql</div><div class="line">sudo useradd -r -g mysql mysql</div></pre></td></tr></table></figure>
+<h3 id="8、修改目录和文件权限，安装默认数据库"><a href="#8、修改目录和文件权限，安装默认数据库" class="headerlink" title="8、修改目录和文件权限，安装默认数据库"></a>8、修改目录和文件权限，安装默认数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/mysql</div><div class="line"></div><div class="line">sudo chown -R mysql .</div><div class="line"></div><div class="line">sudo chgrp -R mysql .</div><div class="line"></div><div class="line">sudo scripts/mysql_install_db –user=mysql</div><div class="line"></div><div class="line">sudo chown -R root .</div><div class="line"></div><div class="line">sudo chown -R mysql data</div></pre></td></tr></table></figure>
+<p>至此，mysql就可以启动运行了。</p>
+<h3 id="9、启动mysql"><a href="#9、启动mysql" class="headerlink" title="9、启动mysql"></a>9、启动mysql</h3><p>CentOS7自带MariaDB的支持，/etc下默认存在my.cnf文件干扰mysql运行，需要先删掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc</div><div class="line">sudo rm -fr my.cnf my.cnf.d</div></pre></td></tr></table></figure></p>
+<p>然后再/etc下重建my.cnf文件，内容如下(或可以不创建，但已经要将/etc/my.cnf删除，默认使用：/usr/local/mysql/my.cnf)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"># For advice on how to change settings please see</div><div class="line"># http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html</div><div class="line"></div><div class="line">[mysqld]</div><div class="line"></div><div class="line"># Remove leading # and set to the amount of RAM for the most important data</div><div class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</div><div class="line"># innodb_buffer_pool_size = 128M</div><div class="line"></div><div class="line"># Remove leading # to turn on a very important data integrity option: logging</div><div class="line"># changes to the binary log between backups.</div><div class="line"># log_bin</div><div class="line"></div><div class="line"># These are commonly set, remove the # and set as required.</div><div class="line"># basedir = …..</div><div class="line"># datadir = /data/mysql/data</div><div class="line"># port = …..</div><div class="line"># server_id = …..</div><div class="line"># socket = …..</div><div class="line"></div><div class="line"># Remove leading # to set options mainly useful for reporting servers.</div><div class="line"># The server defaults are faster for transactions and fast SELECTs.</div><div class="line"># Adjust sizes as needed, experiment to find the optimal values.</div><div class="line"># join_buffer_size = 128M</div><div class="line"># sort_buffer_size = 2M</div><div class="line"># read_rnd_buffer_size = 2M</div><div class="line"></div><div class="line">max_connection = 10000</div><div class="line">sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</div><div class="line"></div><div class="line">#binary log</div><div class="line">log-bin = mysql-bin</div><div class="line">binlog_format = mixed</div><div class="line">expire_logs_day = 30</div><div class="line"></div><div class="line">#slow query log</div><div class="line">slow_query_log = 1</div><div class="line">slow_query_log_file = /var/log/mysql/slow.log</div><div class="line">long_query_time = 3</div><div class="line">log-queries-not-using-indexes</div><div class="line">log-slow-admin-statements</div></pre></td></tr></table></figure></p>
+<p>现在可以启动mysql了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /usr/<span class="built_in">local</span>/mysql/bin/mysqld_safe –user=mysql &amp;</div></pre></td></tr></table></figure></p>
+<p>CentOS7 不能使用service控制mysql服务，而源码安装的mysql也没有提供Systemd的控制脚本。</p>
+<p>于是编辑/etc/rc.d/rc.local文件，添加mysql的开机启动命令。</p>
+<p>/usr/local/mysql/bin/mysqld_safe –user=mysql &amp;<br>然后给/etc/rc.d/rc.local添加可执行权限</p>
+<p>sudo chmod a+x /etc/rc.d/rc.local</p>
+<h3 id="10、修改root密码-或可使用mysqladmin设置密码"><a href="#10、修改root密码-或可使用mysqladmin设置密码" class="headerlink" title="10、修改root密码(或可使用mysqladmin设置密码)"></a>10、修改root密码(或可使用mysqladmin设置密码)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ /usr/loca/mysql/bin/mysql -u root</div><div class="line">use mysql;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">UPDATE user SET password = PASSWORD(‘test2016′) WHERE user = ‘root&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON *.* TO root@’%’ IDENTIFIED BY ‘passwd2016′;</div><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
+<p>使用mysqladmin设置密码：(使用mysqladmin可以进入到bin目录或者设置PATH)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqladmin -u root password 123456</div></pre></td></tr></table></figure></p>
+<p>至此，安装基本完成了，一个mysql就能用了。</p>
+<p>设置之前，我们需要先设置PATH，要不不能直接调用mysql</p>
+<p>修改/etc/profile文件，在文件末尾添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/profile</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PATH=/usr/local/mysql/bin:$PATH</div><div class="line">export PATH</div></pre></td></tr></table></figure>
+<p>关闭文件，运行下面的命令，让配置立即生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
+<p>连接本机MySQL<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql –u root –p</div></pre></td></tr></table></figure></p>
+<p>提示输入password，默认为空，按Enter即</p>
+<p>设置选项文件，将配置文件拷贝到/etc下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cp support-files/my-medium.cnf /etc/mysql.cnf</div></pre></td></tr></table></figure></p>
+<h3 id="10-设置开机自启动"><a href="#10-设置开机自启动" class="headerlink" title="10.设置开机自启动"></a>10.设置开机自启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cp support-files/mysql.server /etc/init.d/mysql</div><div class="line">$ chmod +x /etc/init.d/mysql</div><div class="line">$ chkconfig mysql on</div></pre></td></tr></table></figure>
+<p>通过服务来启动和关闭Mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ service mysql start</div><div class="line">$ service mysql stop</div></pre></td></tr></table></figure></p>
+<h3 id="11-踩坑"><a href="#11-踩坑" class="headerlink" title="11.踩坑"></a>11.踩坑</h3><ol>
+<li><p>权限问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo chown -R mysql.mysql /usr/<span class="built_in">local</span>/mysql</div><div class="line">sudo chmod a+x /etc/my.cnf</div><div class="line">sudo chmod a+x -R /etc/my.cnf</div></pre></td></tr></table></figure>
+</li>
+<li><p>SELINUX问题<br>默认开始SELINUX，关闭之，否则无法连接网络，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/selinux/config</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELINUX=enforcing</div></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELINUX=disabled</div></pre></td></tr></table></figure></p>
+<p>然后重启机器</p>
+<ol>
+<li>更新PID问题<br>执行 service mysql start 提示如下错误：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ERROR! MySQL server PID file could not be found!</div><div class="line">Starting MySQL. ERROR! The server quit without updating PID file (/var/lib/mysql/localhost.localdomain.pid).</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在日志中出现了如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Can&apos;t open and lock privilege tables: Table &apos;mysql.user&apos; doesn&apos;t exist</div><div class="line">Fatal error: Can&apos;t open and lock privilege tables: Table &apos;mysql.user&apos; doesn&apos;t exist</div></pre></td></tr></table></figure></p>
+<p>使用下面的命令初始化以后，问题解决：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/mysql/scripts/mysql_install_db --basedir=/usr/<span class="built_in">local</span>/mysql/ --datadir=/usr/<span class="built_in">local</span>/mysql/data --user=mysql</div></pre></td></tr></table></figure></p>
+<p>下面是网上总结的其他方法：<br>1.可能是/usr/local/mysql/data/rekfan.pid文件没有写的权限<br>解决方法 ：给予权限，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown -R mysql:mysql /var/data” “chmod -R 755 /usr/<span class="built_in">local</span>/mysql/data</div></pre></td></tr></table></figure></p>
+<p>然后重新启动mysqld！<br>2.可能进程里已经存在mysql进程<br>解决方法：用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -ef|grep mysqld</div></pre></td></tr></table></figure></p>
+<p>查看是否有mysqld进程，如果有使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">kill</span> -9  进程号</div></pre></td></tr></table></figure></p>
+<p>杀死，然后重新启动mysqld！<br>3.可能是第二次在机器上安装mysql，有残余数据影响了服务的启动。<br>解决方法：去mysql的数据目录/data看看，如果存在mysql-bin.index，就赶快把它删除掉吧，它就是罪魁祸首了。本人就是使用第三条方法解决的 ！<br>4.mysql在启动时没有指定配置文件时会使用/etc/my.cnf配置文件，请打开这个文件查看在[mysqld]节下有没有指定数据目录(datadir)。<br>解决方法：请在[mysqld]下设置这一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">datadir = /usr/local/mysql/data</div></pre></td></tr></table></figure></p>
+<p>5.skip-federated字段问题<br>解决方法：检查一下/etc/my.cnf文件中有没有没被注释掉的skip-federated字段，如果有就立即注释掉吧。<br>6.错误日志目录不存在<br>解决方法：使用“chown” “chmod”命令赋予mysql所有者及权限<br>7.给/usr/local/mysql/data 目录权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 744 -R  /usr/<span class="built_in">local</span>/myql/data</div></pre></td></tr></table></figure></p>
+<p>8.给/var/lock/subsys/mysql 目录权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 744 -R  /var/lock/subsys/mysql</div></pre></td></tr></table></figure></p>
+<p>9.删除安装目录下的错误日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/usr/local/mysql/data/*.err</div><div class="line">/var/log/mysql/</div></pre></td></tr></table></figure></p>
+<hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://7xo04n.com1.z0.glb.clouddn.com/weixinpay_me.JPG" alt="流云 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://7xo04n.com1.z0.glb.clouddn.com/alipay_me.JPG" alt="流云 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL源码安装/" rel="tag">#MySQL源码安装</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/03/VPS优惠码/" rel="next" title="VPS优惠码">
+                <i class="fa fa-chevron-left"></i> VPS优惠码
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/06/MySQL5-6源码安装/"
+           data-title="MySQL5.6源码安装" data-url="http://blog.zhangweiheu.cn/2016/09/06/MySQL5-6源码安装/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xo04n.com1.z0.glb.clouddn.com/avatar_me.jpg"
+               alt="流云" />
+          <p class="site-author-name" itemprop="name">流云</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhangweiheu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/zhangweiheu" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="www.linkedin.com/in/伟-张-28b01a105" target="_blank" title="Linkedin">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  Linkedin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://mritd.me" title="漠然" target="_blank">漠然</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.yhthu.com" title="杨浩" target="_blank">杨浩</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="www.drayy.com" title="Drayy" target="_blank">Drayy</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CentOS7开启网络"><span class="nav-number">1.</span> <span class="nav-text">CentOS7开启网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、下载源码"><span class="nav-number">2.</span> <span class="nav-text">1、下载源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、解压"><span class="nav-number">3.</span> <span class="nav-text">2、解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、安装必要的包"><span class="nav-number">4.</span> <span class="nav-text">3、安装必要的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、进入mysql源码目录，生成makefil"><span class="nav-number">5.</span> <span class="nav-text">4、进入mysql源码目录，生成makefil</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、编译"><span class="nav-number">6.</span> <span class="nav-text">5、编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、安装"><span class="nav-number">7.</span> <span class="nav-text">6、安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、添加mysql用户和组"><span class="nav-number">8.</span> <span class="nav-text">7、添加mysql用户和组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、修改目录和文件权限，安装默认数据库"><span class="nav-number">9.</span> <span class="nav-text">8、修改目录和文件权限，安装默认数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、启动mysql"><span class="nav-number">10.</span> <span class="nav-text">9、启动mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、修改root密码-或可使用mysqladmin设置密码"><span class="nav-number">11.</span> <span class="nav-text">10、修改root密码(或可使用mysqladmin设置密码)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-设置开机自启动"><span class="nav-number">12.</span> <span class="nav-text">10.设置开机自启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-踩坑"><span class="nav-number">13.</span> <span class="nav-text">11.踩坑</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">流云</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div class="theme-info">
+　|　图片存储服务 -
+  <a class="theme-link" href="http://www.qiniu.com/">
+    七牛云
+  </a>
+</div>
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhangweiheu"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("gr2dyLVOM8bXlljKvmp94yLL-gzGzoHsz", "tkBNlQLOXAOtPaU67rkfqrLk");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>

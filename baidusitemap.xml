@@ -4,6 +4,51 @@
 
     
   <url>
+    <loc>http://blog.zhangweiheu.cn/2017/03/02/Nginx%E5%AD%A6%E4%B9%A0-1/</loc>
+    <lastmod>2017-05-14T14:50:50.755Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx学习-1</title>
+        <pubTime>2017-03-02T15:09:48.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>服务器</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://blog.zhangweiheu.cn/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zhangweiheu.cn/2016/09/06/MySQL5-6%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2017-03-02T14:24:42.832Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL5.6源码安装</title>
+        <pubTime>2016-09-05T23:57:41.000Z</pubTime>
+        
+        <tag>MySQL源码安装</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://blog.zhangweiheu.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://blog.zhangweiheu.cn/2015/11/01/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%BD%BF%E7%94%A8suspend%E5%92%8Cstop%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2016-11-07T12:56:15.457Z</lastmod>
     <data>
@@ -19,26 +64,6 @@
            
              
               <breadCrumb title="Java基础知识" url="http://blog.zhangweiheu.cn/categories/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.zhangweiheu.cn/2016/09/06/MySQL5-6%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2016-09-12T00:37:21.889Z</lastmod>
-    <data>
-        <display>
-        <title>MySQL5.6源码安装</title>
-        <pubTime>2016-09-05T23:57:41.000Z</pubTime>
-        
-        <tag>MySQL源码安装</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据库" url="http://blog.zhangweiheu.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
           
         </display>
     </data>
@@ -305,9 +330,9 @@
         <title>SSH权限</title>
         <pubTime>2016-05-28T13:31:39.000Z</pubTime>
         
-        <tag>SSH</tag>
-         
         <tag>命令</tag>
+         
+        <tag>SSH</tag>
          
          
            
@@ -424,7 +449,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://blog.zhangweiheu.cn/2016/08/10/%E6%AD%A3%E5%BC%8F%E5%B7%A5%E4%BD%9C20%E5%A4%A9/</loc>
